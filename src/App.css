@@ -1,0 +1,221 @@
+.custom-navbar {
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-flex{
+  display: flex;
+  gap: 10px;
+}
+
+.underline-on-hover {
+  text-decoration: none; /* Remove the default underline */
+  position: relative; /* Set the position to relative to make room for the underline */
+}
+
+.underline-on-hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: #000000; /* Change the color of the underline */
+  bottom: 0; /* Position the underline at the bottom of the link */
+  left: 0;
+  transform: scaleX(0); /* Start with zero width (hidden) */
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+}
+
+.underline-on-hover:hover::after {
+  transform: scaleX(1); /* Expand the underline to 100% width on hover */
+  transform-origin: bottom left;
+}
+/* App.css */
+.custom-facebook-icon {
+  color: #1877F2; /* Set the custom color for Facebook (e.g., Facebook blue) */
+}
+
+.custom-instagram-icon {
+  color: #E1306C; /* Set the custom color for Instagram (e.g., Instagram pink) */
+}
+
+body{
+  background-color: #fef5e65d;
+}
+.center-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home img{
+  display: block;
+  object-fit: cover;
+  width: 40%;
+  height: 40%;
+}
+
+.show-menu-button{
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.home-text{
+  color: white;
+  text-align: center;
+}
+
+
+
+/* Apply the background image to a pseudo-element */
+.home-with-background::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Set the height to cover the viewport height */
+  z-index: -1; /* Place it behind the main content */
+  background-image: url('https://as1.ftcdn.net/v2/jpg/01/88/34/60/1000_F_188346068_1BpZMI9s5ZRWxy2lFgiCKcJjv6Ug3AGv.jpg');
+  background-size: cover;
+  background-position: center;
+   /* Ensures the background stays fixed when scrolling */
+  opacity: 1; /* Set opacity to full */
+  filter: brightness(0.7) blur(2px);/* Adjust brightness (0.7 reduces it) */
+  color: white;
+}
+
+.custom-nav {
+  background-color: transparent;
+  /* Make the background fully transparent */
+  padding: 1rem;
+  /* Add any additional styles for your navigation bar here */
+}
+
+.custom-nav .nav-link {
+  font-weight: bold;
+  /* Make the text bold */
+  font-size: 18px;
+  /* Set the font size to 16px */
+ color: black;
+}
+
+
+/*for about us page*/
+/* About.css */
+
+/* Styles for the background container */
+.about-with-background {
+  content: '';
+ 
+  top: 0;
+  left: 0;
+  width: 100%;
+ /* Set the height to cover the viewport height */
+  z-index: -1; /* Place it behind the main content */
+ 
+
+/* Ensures the background stays fixed when scrolling */
+/* Set opacity to full */
+  filter: brightness(0.7); /* Adjust brightness (0.7 reduces it) */ 
+}
+
+/* Styles for the introductory text */
+.about-text {
+  padding: 20px;
+  font-size: 1.2em;
+  
+}
+
+/* Styles for the centered image */
+.centered-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0px;
+}
+
+.centered-image-container img {
+  
+  max-width: 100%;
+  height: auto;
+  max-height: 80vh;
+}
+.about-col1{
+  display: flex;
+  flex-direction: column;
+}
+.side-image-container img{
+  max-width: 80%;
+  height: auto;
+  max-height: 80vh;
+}
+
+/* Styles for the "About Us" section */
+.centered-content {
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+.centered-content h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.line{
+  border: 2px solid black;
+  margin: 0px 40px;
+}
+
+.marquee-container {
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-text {
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.footer{
+  background-color: 
+  #ffffff;
+}
+
+.footer-buttons{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+}
+.footer-button{
+  width: 180px;
+}
