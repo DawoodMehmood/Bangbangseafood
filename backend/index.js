@@ -28,7 +28,7 @@ app.use(express.json());
 
 // routes
 app.use('/api/contact', contactRoutes)
-// app.use('/api/menu', menuRoutes)
+app.use('/api/menu', menuRoutes)
 
 
 //database connection using mongoose
