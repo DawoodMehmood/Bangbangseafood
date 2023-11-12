@@ -20,7 +20,6 @@ const categoryAddonSchema = new mongoose.Schema({
   const menuSchema = new mongoose.Schema({
     categoryName: String,
     CategoryDescription: String,
-    categoryNote: String,
     categoryAddons: [categoryAddonSchema],
     dishes: [dishSchema],
   }, {
