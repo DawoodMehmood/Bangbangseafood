@@ -34,3 +34,14 @@ justify-content: end;
   .address{
     text-wrap: balance;
   }
+
+  .form-container {
+    border: 1px solid #616161; /* Add your desired border color */
+    background-color: #fff; /* Add your desired background color inside the border */
+    padding: 20px; /* Adjust the padding as needed */
+    border-radius: 10px; /* Optional: Add border-radius for rounded corners */
+  }
+
+  .box{
+    margin-bottom: 100px;
+  }
