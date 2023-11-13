@@ -7,6 +7,7 @@ import Contact from './components/contact/contact';
 import AboutUs from './components/about-us';
 import Footer from './components/Footer';
 import Menu from './components/menu';
+import Catering from './components/catering/catering';
 
 
 
@@ -25,7 +26,7 @@ function App() {
       <Route path="/order-online" element={<Contact />} />
       <Route path="/gallery" element={<Contact />} />
       <Route path="/preorder" element={<Contact />} />
-      <Route path="/catering" element={<Contact />} />
+      <Route path="/catering" element={<Catering />} />
   </Routes>
 </div>
     <Footer/>

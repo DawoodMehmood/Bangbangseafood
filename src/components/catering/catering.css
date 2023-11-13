@@ -1,0 +1,36 @@
+.catering-image {
+    text-align: center;
+    position: relative;
+     /* Set the desired height for the container */
+    height: 300px; /* Set the desired width for the container */
+    overflow: hidden;
+
+  }
+
+  .catering-image img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.6); 
+
+  }
+
+  .centered-heading {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+
+  .send-button-catering{
+display: flex;
+justify-content: end;
+  }
+
+  .address{
+    text-wrap: balance;
+  }
