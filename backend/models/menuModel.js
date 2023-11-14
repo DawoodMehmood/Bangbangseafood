@@ -14,6 +14,7 @@ const categoryAddonSchema = new mongoose.Schema({
   const dishSchema = new mongoose.Schema({
     name: String,
     price: Number,
+    image: String,
     addons: [addonSchema],
   });
   
