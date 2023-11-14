@@ -7,14 +7,14 @@ import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 const Layout = () => {
   return (
     <>
-    <div className="banner text-center">
-          <Row className="py-2">
-            <Col>
+    <div  className="banner text-center"><Container className="py-2">
+         
             Take out and delivery options are available
-            </Col>
-          </Row>
-        </div>
+         
+        </Container></div>
+    
       <Navbar className="custom-navbar navbar-icons px-5">
+        
         <Navbar.Brand as={Link} to="/"><img
           src={brandImage}
           alt="Brand Logo"
