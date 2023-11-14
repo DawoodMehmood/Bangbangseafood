@@ -6,7 +6,7 @@ import Layout from './components/layout';
 import Contact from './components/contact/contact';
 import AboutUs from './components/about-us';
 import Footer from './components/Footer';
-import Menu from './components/menu';
+import Menu from './components/menu/menu';
 import Catering from './components/catering/catering';
 
 
