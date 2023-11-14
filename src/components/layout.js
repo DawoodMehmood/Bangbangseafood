@@ -1,5 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Container, Row, Col } from "react-bootstrap";
 import brandImage from "../img/logo.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -7,6 +7,13 @@ import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 const Layout = () => {
   return (
     <>
+    <div className="banner text-center">
+          <Row className="py-2">
+            <Col>
+            Take out and delivery options are available
+            </Col>
+          </Row>
+        </div>
       <Navbar className="custom-navbar navbar-icons px-5">
         <Navbar.Brand as={Link} to="/"><img
           src={brandImage}

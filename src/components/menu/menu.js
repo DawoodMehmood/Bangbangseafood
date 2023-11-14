@@ -1,3 +1,5 @@
+// ... Other imports ...
+
 import React, { useState, useEffect } from 'react';
 import { Card, Container, Row, Col } from 'react-bootstrap';
 import "./../contact/contact.css";
@@ -5,6 +7,7 @@ import "./menu.css";
 
 const Menu = () => {
   const [menuData, setMenuData] = useState([]);
+  const [cardHeights, setCardHeights] = useState({});
 
   useEffect(() => {
     // Fetch menu data from the API endpoint
@@ -13,6 +16,28 @@ const Menu = () => {
       .then(data => setMenuData(data))
       .catch(error => console.error('Error fetching menu data:', error));
   }, []); // Empty dependency array ensures the effect runs once after the initial render
+
+  useEffect(() => {
+    // Calculate and set the maximum height for each category
+    const calculateMaxHeights = () => {
+      const newCardHeights = {};
+
+      menuData.forEach(category => {
+        const maxHeight = category.dishes.reduce((max, dish) => {
+          const card = document.getElementById(`card-${dish._id}`);
+          const cardHeight = card ? card.clientHeight : 0;
+          return Math.max(max, cardHeight);
+        }, 0);
+
+        newCardHeights[category._id] = maxHeight;
+      });
+
+      setCardHeights(newCardHeights);
+    };
+
+    // Call the function initially and whenever menuData changes
+    calculateMaxHeights();
+  }, [menuData]);
 
   return (
     <div>
@@ -26,17 +51,22 @@ const Menu = () => {
         {menuData.map(category => (
           <div className='my-5' key={category._id}>
             <h2>{category.categoryName}</h2>
-          
+
             {category.CategoryDescription && (
-              <div className="category-description description-box mt-4">
+              <div className="description-box category-description mt-4">
                 <p>{category.CategoryDescription}</p>
               </div>
             )}
+
             <Row className="justify-content-center">
               {category.dishes.map(dish => (
                 <Col key={dish._id} xs={12} sm={6} md={4} lg={3}>
-                  <Card className='m-4'>
-                    <Card.Img className='card-img' variant="top" src={dish.image} alt="Product Image" />
+                  <Card
+                    id={`card-${dish._id}`}
+                    className='m-4'
+                    style={{ height: `${cardHeights[category._id]}px` }}
+                  >
+                    <Card.Img className="card-img" variant="top" src={dish.image} alt="Product Image" />
                     <Card.Body>
                       <div className="d-flex justify-content-between align-items-center">
                         <h5 className="mb-0">{dish.name}</h5>
@@ -56,21 +86,21 @@ const Menu = () => {
               ))}
             </Row>
             <div className='extras'>
-            {category.categoryAddons.length > 0 && category.categoryAddons[0].addons.length > 0 && (
-              <div>
-                <strong>Add-ons:</strong> {category.categoryAddons[0].addons.map(addon => addon.name).join(', ')}
-              </div>
-            )}
-            {category.categoryAddons.length > 0 && category.categoryAddons[0].flavours.length > 0 && (
-              <div>
-                <strong>Flavours:</strong> {category.categoryAddons[0].flavours}
-              </div>
-            )}
-            {category.categoryAddons.length > 0 && category.categoryAddons[0].spiceLevels.length > 0 && (
-              <div>
-                <strong>Spice levels:</strong> {category.categoryAddons[0].spiceLevels}
-              </div>
-            )}
+              {category.categoryAddons.length > 0 && category.categoryAddons[0].addons.length > 0 && (
+                <div>
+                  <strong>Add-ons:</strong> {category.categoryAddons[0].addons.map(addon => addon.name).join(', ')}
+                </div>
+              )}
+              {category.categoryAddons.length > 0 && category.categoryAddons[0].flavours.length > 0 && (
+                <div>
+                  <strong>Flavours:</strong> {category.categoryAddons[0].flavours}
+                </div>
+              )}
+              {category.categoryAddons.length > 0 && category.categoryAddons[0].spiceLevels.length > 0 && (
+                <div>
+                  <strong>Spice levels:</strong> {category.categoryAddons[0].spiceLevels}
+                </div>
+              )}
             </div>
           </div>
         ))}

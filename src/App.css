@@ -1,3 +1,10 @@
+.banner{
+font-size: 19px;
+background-color: lightyellow;
+font-weight: 500;
+
+}
+
 .custom-navbar {
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
@@ -45,7 +52,7 @@
 }
 
 body{
-  background-color: #7574731d;
+  background-color: #7574732d;
 }
 .center-nav {
   display: flex;
