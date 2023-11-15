@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div >
    
-    <div className='home my-4'>
+    <div className='home my-5'>
       <img
         src={logoimage}
         alt="bang bang seafood & grill Logo"

@@ -46,7 +46,7 @@ const Catering = () => {
   
 <Container>
         <div className="m-4">
-          <h2 className="address text-center my-5">
+          <h2 className="address text-center text-white my-5">
             GET A QUOTE BY FILLING OUT THE FORM AND WE WILL CONTACT YOU SHORTLY
             VIA EMAIL
           </h2>

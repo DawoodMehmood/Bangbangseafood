@@ -1,8 +1,20 @@
 .banner{
 font-size: 19px;
-background-color: lightyellow;
-font-weight: 500;
-letter-spacing: 1px;;
+background-color: #f7f7a9;
+
+letter-spacing: 2px;
+word-spacing: 4px;
+}
+
+.dark-navbar {
+  background-color: #222222; /* Change this to your desired dark background color */
+ 
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.2);
 }
 
 .custom-navbar {
@@ -20,12 +32,12 @@ letter-spacing: 1px;;
   gap: 10px;
 }
 
-.underline-on-hover {
+.underline-on-hover-black {
   text-decoration: none; /* Remove the default underline */
   position: relative; /* Set the position to relative to make room for the underline */
 }
 
-.underline-on-hover::after {
+.underline-on-hover-black::after {
   content: '';
   position: absolute;
   width: 100%;
@@ -38,10 +50,36 @@ letter-spacing: 1px;;
   transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
 }
 
-.underline-on-hover:hover::after {
+.underline-on-hover-black:hover::after {
   transform: scaleX(1); /* Expand the underline to 100% width on hover */
   transform-origin: bottom left;
 }
+
+
+
+.underline-on-hover-white {
+  text-decoration: none; /* Remove the default underline */
+  position: relative; /* Set the position to relative to make room for the underline */
+}
+
+.underline-on-hover-white::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: #ffffff; /* Change the color of the underline */
+  bottom: 0; /* Position the underline at the bottom of the link */
+  left: 0;
+  transform: scaleX(0); /* Start with zero width (hidden) */
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+}
+
+.underline-on-hover-white:hover::after {
+  transform: scaleX(1); /* Expand the underline to 100% width on hover */
+  transform-origin: bottom left;
+}
+
 /* App.css */
 .custom-facebook-icon {
   color: #1877F2; /* Set the custom color for Facebook (e.g., Facebook blue) */
@@ -84,6 +122,7 @@ body{
 .home-text{
   color: white;
   text-align: center;
+  font-size: 22px;
 }
 
 
@@ -102,7 +141,7 @@ body{
   background-position: center;
    /* Ensures the background stays fixed when scrolling */
   opacity: 1; /* Set opacity to full */
-  filter: brightness(0.7) blur(2px);/* Adjust brightness (0.7 reduces it) */
+  filter: brightness(0.5) blur(5px);/* Adjust brightness (0.7 reduces it) */
   color: white;
 }
 

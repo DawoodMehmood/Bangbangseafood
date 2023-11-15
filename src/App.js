@@ -15,7 +15,8 @@ function App() {
   const location = useLocation();
   return (
     <>
-   <div className={`content-container ${location.pathname === '/home' ? 'home-with-background' : ''}`}>
+  <div className={`content-container ${['/home', '/menu', '/catering'].includes(location.pathname) ? 'home-with-background' : ''}`}>
+
    <Layout />
   <Routes>
       <Route path='/' element={<Navigate to='/home' />} />

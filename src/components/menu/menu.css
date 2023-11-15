@@ -1,5 +1,10 @@
 /* Menu.css */
-
+h2{
+  font-size: 50px;
+  -webkit-text-stroke: 1px black;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
 .menu-container {
     text-align: center;
   }
@@ -19,7 +24,7 @@
     width: 18rem;
     border-radius: 15px;
     margin: 10px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 18px 18px 10px rgba(0, 0, 0, 0.1);
   }
   
   .card img {
@@ -76,9 +81,15 @@
     filter: brightness(0.6);
   }
   
-  .extras , .category-description{
+.category-description{
     font-size: 20px;
   }
+  .extras{
+    font-size: 25px;
+    
+  }
+
+
 
   .card img {
     width: calc(100% - 20px); /* Adjust the width to leave room for margin on both sides */
@@ -91,12 +102,13 @@
 
   .description-box {
     display: inline-block;
-    background-color: #f5f5f5;
+    background-color: #ffffe0;
     border: 1px solid #ddd;
     border-radius: 12px;
    padding: 10px 15px 0px;
     margin-top: 10px;
     max-width: 1000px;
+    font-size: 22px;
   }
   
 

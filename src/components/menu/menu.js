@@ -46,17 +46,36 @@ const Menu = () => {
         <h1 className="fs-1 centered-heading">MENU</h1>
       </div>
 
-      <Container className="text-center">
+      <Container>
         {/* Render menu items dynamically */}
         {menuData.map(category => (
-          <div className='my-5' key={category._id}>
-            <h2>{category.categoryName}</h2>
+          <div className='my-5 ' key={category._id}>
+            <h2 className='text-light text-center '>{category.categoryName}</h2>
 
             {category.CategoryDescription && (
-              <div className="description-box category-description mt-4">
+              <div className='text-center ' >
+                <div className="description-box category-description mt-4">
                 <p>{category.CategoryDescription}</p>
               </div>
+              </div>
             )}
+            <div className='extras text-light mt-3'>
+              {category.categoryAddons.length > 0 && category.categoryAddons[0].addons.length > 0 && (
+                <div>
+                  <strong><span className='fs-2'>Add-ons: </span>{category.categoryAddons[0].addons.map(addon => addon.name).join(', ')}</strong>
+                </div>
+              )}
+              {category.categoryAddons.length > 0 && category.categoryAddons[0].flavours.length > 0 && (
+                <div>
+                  <strong><span className='fs-2'>Flavours: </span>{category.categoryAddons[0].flavours}</strong>
+                </div>
+              )}
+              {category.categoryAddons.length > 0 && category.categoryAddons[0].spiceLevels.length > 0 && (
+                <div>
+                  <strong><span className='fs-2'>Spice levels: </span>{category.categoryAddons[0].spiceLevels}</strong>
+                </div>
+              )}
+            </div>
 
             <Row className="justify-content-center">
               {category.dishes.map(dish => (
@@ -69,7 +88,7 @@ const Menu = () => {
                     <Card.Img className="card-img" variant="top" src={dish.image} alt="Product Image" />
                     <Card.Body>
                       <div className="d-flex justify-content-between align-items-center">
-                        <h5 className="mb-0">{dish.name}</h5>
+                        <strong className="mb-0">{dish.name}</strong>
                         <strong className="mb-0">Price: ${dish.price.toFixed(2)}</strong>
                       </div>
                       <Card.Text>
@@ -85,23 +104,7 @@ const Menu = () => {
                 </Col>
               ))}
             </Row>
-            <div className='extras'>
-              {category.categoryAddons.length > 0 && category.categoryAddons[0].addons.length > 0 && (
-                <div>
-                  <strong>Add-ons:</strong> {category.categoryAddons[0].addons.map(addon => addon.name).join(', ')}
-                </div>
-              )}
-              {category.categoryAddons.length > 0 && category.categoryAddons[0].flavours.length > 0 && (
-                <div>
-                  <strong>Flavours:</strong> {category.categoryAddons[0].flavours}
-                </div>
-              )}
-              {category.categoryAddons.length > 0 && category.categoryAddons[0].spiceLevels.length > 0 && (
-                <div>
-                  <strong>Spice levels:</strong> {category.categoryAddons[0].spiceLevels}
-                </div>
-              )}
-            </div>
+            
           </div>
         ))}
       </Container>
