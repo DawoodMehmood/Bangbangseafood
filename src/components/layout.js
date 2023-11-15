@@ -9,7 +9,7 @@ const Layout = () => {
     <>
     <div  className="banner text-center"><Container className="py-2">
          
-            Take out and delivery options are available
+            Take out and Delivery options are available
          
         </Container></div>
     
