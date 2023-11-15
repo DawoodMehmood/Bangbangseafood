@@ -34,7 +34,7 @@ const Layout = () => {
 
         </Nav>
         <Nav >
-          <a target="_blank" className='mx-2' href="https://www.facebook.com/profile.php?id=61553102605034">
+          <a target="_blank" className='mx-3' href="https://www.facebook.com/profile.php?id=61553102605034">
             <FontAwesomeIcon icon={faFacebook} size="2x" className="custom-facebook-icon" />
           </a>
           <a target="_blank" href="https://instagram.com/bangbangseafoodandgrill?igshid=YTQwZjQ0NmI0OA==" >
