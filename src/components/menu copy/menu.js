@@ -44,18 +44,31 @@ const MenuCopy = () => {
   }, [menuData]);
 
   return (
-    <div>
+    <div className='menu-main'>
       <div className="contact-image">
         <img src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg" alt="Contact Us Image" />
         <h1 className="fs-1 centered-heading">MENU</h1>
       </div>
 
-     
-       <img className='menu-img' src={SoulBowl}></img>
-       <img className='menu-img' src={Wings}></img>
-       <img className='menu-img' src={Shrimps}></img>
-       <img className='menu-img' src={Pastas}></img>
-    
+      <Container className='container-fluid' fluid>
+        <Row className='no-gutters'>
+          <Col sm={6} >
+            <img className='menu-img' src={SoulBowl} alt="Soul Bowl" />
+          </Col>
+          <Col sm={6}>
+            <img className='menu-img' src={Wings} alt="Wings & Po Boy's" />
+          </Col>
+        </Row>
+
+        <Row className='pb-1 no-gutters'>
+          <Col sm={6}>
+            <img className='menu-img' src={Shrimps} alt="Crab Boils" />
+          </Col>
+          <Col sm={6}>
+            <img className='menu-img' src={Pastas} alt="Pastas" />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };

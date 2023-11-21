@@ -75,7 +75,7 @@ h2{
     width: 100%;
     height: auto;
     position: absolute;
-    top: 75%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     filter: brightness(0.6);
@@ -114,4 +114,29 @@ h2{
 
   .menu-img{
     width: 100%;
+  }
+
+  .menu-main{
+    background-color: white;
+    
+  }
+  .menu-main .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+ 
+  }
+
+  .no-gutters {
+    margin-top: 0px;
+    margin-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+  padding-right: 0;
+  }
+  
+  /* Adjust padding for columns within a row with no gutters */
+  .no-gutters > [class^="col-"] {
+    padding-right: 0px;
+    padding-left: 0;
+    margin-top: 2px;
   }

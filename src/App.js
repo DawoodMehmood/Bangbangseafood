@@ -16,7 +16,7 @@ function App() {
   const location = useLocation();
   return (
     <>
-  <div className={`content-container ${['/home', '/menu', '/catering'].includes(location.pathname) ? 'home-with-background' : ''}`}>
+  <div className={`content-container ${['/home', '/order-online', '/catering'].includes(location.pathname) ? 'home-with-background' : ''}`}>
 
    <Layout />
   <Routes>
