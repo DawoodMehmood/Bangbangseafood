@@ -6,7 +6,8 @@ import Layout from './components/layout';
 import Contact from './components/contact/contact';
 import AboutUs from './components/about-us';
 import Footer from './components/Footer';
-import Menu from './components/menu/menu';
+import Menu from './components/order-online/menu';
+import MenuCopy from './components/menu copy/menu';
 import Catering from './components/catering/catering';
 
 
@@ -23,8 +24,8 @@ function App() {
       <Route path='/home' element={<Home />} />
       <Route path="/about" element={<AboutUs />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/menu" element={<Menu />} />
-      <Route path="/order-online" element={<Contact />} />
+      <Route path="/menu" element={<MenuCopy />} />
+      <Route path="/order-online" element={<Menu />} />
       <Route path="/gallery" element={<Contact />} />
       <Route path="/preorder" element={<Contact />} />
       <Route path="/catering" element={<Catering />} />
