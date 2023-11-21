@@ -10,11 +10,11 @@ const Layout = () => {
     <>
     <div  className="banner text-center"><Container className="py-2">
          
-    <strong>Take Out</strong> & <strong>Delivery</strong> Both Options are Available
+    <strong>Take Out Restaurant</strong> & <strong>We Deliver</strong>
          
         </Container></div>
     
-        <Navbar className={` navbar-icons px-5 ${location.pathname === '/home' ? 'dark-navbar ' : 'custom-navbar'}`}>
+        <Navbar className={` navbar-icons px-5 dark-navbar`}>
         {/* ... (your other Navbar content) */}
         
         <Navbar.Brand as={Link} to="/"><img
@@ -25,14 +25,14 @@ const Layout = () => {
 
         /></Navbar.Brand>
         <Nav className="nav-flex"> {/* Apply the center-nav class */}
-          <Nav.Link as={Link} to="/" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>Home</Nav.Link>
-          <Nav.Link as={Link} to="/menu" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>Menu</Nav.Link>
-          <Nav.Link as={Link} to="/order-online" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>Order Online</Nav.Link>
-          <Nav.Link as={Link} to="/preorder" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>Pre-order</Nav.Link>
-          <Nav.Link as={Link} to="/catering" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>Catering</Nav.Link>
-          {/* <Nav.Link as={Link} to="/gallery" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>Gallery</Nav.Link> */}
-          <Nav.Link as={Link} to="/about" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>About Us</Nav.Link>
-          <Nav.Link as={Link} to="/contact" className={` ${location.pathname === '/home' ? 'text-light underline-on-hover-white' : 'underline-on-hover-black'}`}>Contact Us</Nav.Link>
+          <Nav.Link as={Link} to="/" className='text-light underline-on-hover-white'>Home</Nav.Link>
+          <Nav.Link as={Link} to="/menu" className='text-light underline-on-hover-white'>Menu</Nav.Link>
+          <Nav.Link as={Link} to="/order-online" className='text-light underline-on-hover-white'>Online Pickup Order</Nav.Link>
+          <Nav.Link as={Link} to="/preorder" className='text-light underline-on-hover-white'>Pre-order</Nav.Link>
+          <Nav.Link as={Link} to="/catering" className='text-light underline-on-hover-white'>Catering</Nav.Link>
+          {/* <Nav.Link as={Link} to="/gallery" className='text-light underline-on-hover-white'>Gallery</Nav.Link> */}
+          <Nav.Link as={Link} to="/about" className='text-light underline-on-hover-white'>About Us</Nav.Link>
+          <Nav.Link as={Link} to="/contact" className='text-light underline-on-hover-white'>Contact Us</Nav.Link>
 
         </Nav>
         <Nav >

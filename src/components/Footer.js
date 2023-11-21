@@ -13,13 +13,13 @@ const Footer = () => {
             <Col sm={3} className="footer-buttons">
               <h4>Order Now</h4>
               <Button className="footer-button mb-2 " variant="outline-dark">
-                Order from DoorDash
+               DoorDash
               </Button>
               <Button className="footer-button mb-2" variant="outline-dark">
-                Order from Uber Eats
+               Uber Eats
               </Button>
               <Button className="footer-button mb-2" variant="outline-dark">
-                Order from Grub Hub
+               Grub Hub
               </Button>
             </Col>
 

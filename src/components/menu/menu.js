@@ -89,7 +89,7 @@ const Menu = () => {
                     <Card.Body>
                       <div className="d-flex justify-content-between align-items-center">
                         <strong className="mb-0">{dish.name}</strong>
-                        <strong className="mb-0">Price: ${dish.price.toFixed(2)}</strong>
+                        <strong className="mb-0">${dish.price.toFixed(2)}</strong>
                       </div>
                       <Card.Text>
                         {dish.addons.length > 0 && (

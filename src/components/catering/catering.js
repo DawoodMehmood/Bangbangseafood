@@ -58,13 +58,13 @@ const Catering = () => {
         <Row className="mx-5">
           <Col sm={1}></Col>
 
-          <Col sm={10}>
+          <Col sm={10} >
             <Form
               className="fw-bold ms-3 form-container"
               onSubmit={handleSubmit}
             >
-              <Row>
-                <Col>
+              <Row className="mx-4" >
+                <Col >
                   <Form.Group>
                     <Form.Label>First Name</Form.Label>
                     <Form.Control
@@ -92,7 +92,7 @@ const Catering = () => {
                 </Col>
               </Row>
 
-              <Row className="mt-3">
+              <Row className="mt-3 mx-4">
                 <Col>
                   <Form.Group>
                     <Form.Label>Email</Form.Label>
@@ -124,7 +124,7 @@ const Catering = () => {
                 </Col>
               </Row>
 
-              <Row className="mt-3">
+              <Row className="mt-3 mx-4">
                 <Col>
                   <Form.Group>
                     <Form.Label>Number of Persons</Form.Label>
@@ -167,6 +167,7 @@ const Catering = () => {
                 </Col>
               </Row>
 
+              <Row className="mx-4">
               <Form.Group className="mt-3">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
@@ -179,13 +180,14 @@ const Catering = () => {
                   required
                 />
               </Form.Group>
+              </Row>
               <div className="send-button-catering">
                 <Button
                   className="fs-6 mt-3 py-2 px-3"
                   variant="dark"
                   type="submit"
                 >
-                  Send Email
+                  Send Message
                 </Button>
               </div>
             </Form>
