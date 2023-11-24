@@ -71,7 +71,7 @@ const Contact = () => {
           <Col sm={7}>
             <Form className='fw-bold  ms-3' onSubmit={handleSubmit}>
               <Row >
-                <Col>
+                <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Name</Form.Label>
                     <Form.Control
@@ -84,7 +84,7 @@ const Contact = () => {
                     />
                   </Form.Group>
                 </Col>
-                <Col>
+                <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Email</Form.Label>
                     <Form.Control
