@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Menu from './components/order-online/menu';
 import MenuCopy from './components/menu copy/menu';
 import Catering from './components/catering/catering';
+import ComingSoon from './components/coming-soon';
 
 
 
@@ -29,6 +30,7 @@ function App() {
       <Route path="/gallery" element={<Contact />} />
       <Route path="/preorder" element={<Contact />} />
       <Route path="/catering" element={<Catering />} />
+      <Route path="/coming-soon" element={<ComingSoon />} />
   </Routes>
 </div>
     <Footer/>

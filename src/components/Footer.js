@@ -2,8 +2,15 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
+  const handleButtonClick = () => {
+    // Navigate to the "/coming-soon" path
+    navigate("/coming-soon");
+  };
   return (
     <div>
       <footer className="footer text-dark py-4">
@@ -12,17 +19,28 @@ const Footer = () => {
             {/* First Column */}
             <Col sm={3} className="footer-buttons">
               <h4>Order Now</h4>
-              <Button className="footer-button mb-2 " variant="outline-dark">
-               DoorDash
+              <Button
+                className="footer-button mb-2"
+                variant="outline-dark"
+                onClick={handleButtonClick}
+              >
+                DoorDash
               </Button>
-              <Button className="footer-button mb-2" variant="outline-dark">
-               Uber Eats
+              <Button
+                className="footer-button mb-2"
+                variant="outline-dark"
+                onClick={handleButtonClick}
+              >
+                Uber Eats
               </Button>
-              <Button className="footer-button mb-2" variant="outline-dark">
-               Grub Hub
+              <Button
+                className="footer-button mb-2"
+                variant="outline-dark"
+                onClick={handleButtonClick}
+              >
+                Grub Hub
               </Button>
             </Col>
-
             {/* Second Column */}
             <Col sm={3} className="text-center">
               <h4>Address</h4>
