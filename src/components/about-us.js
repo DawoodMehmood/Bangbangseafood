@@ -1,6 +1,6 @@
 import React, {useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import image from "./logo.jpg";
+import image from "./../img/logo.png";
 
 const AboutUs = () => {
 

@@ -203,6 +203,12 @@ body{
   display: flex;
   flex-direction: column;
 }
+
+.side-image-container{
+  display: flex;
+  justify-content: center;
+}
+
 .side-image-container img{
   max-width: 80%;
   height: auto;
