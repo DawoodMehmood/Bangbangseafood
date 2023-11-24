@@ -25,7 +25,7 @@ const Layout = () => {
         </Container>
       </div>
 
-      <Navbar expand="lg" className={`navbar-icons px-5 dark-navbar`} variant="dark">
+      <Navbar expand="lg" className={` px-5 dark-navbar`} variant="dark">
         <Navbar.Brand as={Link} to="/">
           <img src={brandImage} alt="Brand Logo" width="80" height="80" />
         </Navbar.Brand>
@@ -81,12 +81,11 @@ const Layout = () => {
             >
               Contact Us
             </Nav.Link>
-          </Nav>
-        
-        <Nav>
-          <a
+         
+         <div className="links">
+         <Nav.Link
             target="_blank"
-            className="mx-3"
+            className="mx-1"
             href="https://www.facebook.com/profile.php?id=61553102605034"
           >
             <FontAwesomeIcon
@@ -94,17 +93,18 @@ const Layout = () => {
               size="2x"
               className="custom-facebook-icon"
             />
-          </a>
-          <a
+          </Nav.Link>
+          <Nav.Link
             target="_blank"
             href="https://instagram.com/bangbangseafoodandgrill?igshid=YTQwZjQ0NmI0OA=="
           >
             <FontAwesomeIcon
               icon={faInstagram}
               size="2x"
-              className="custom-instagram-icon"
+              className="custom-instagram-icon mx-1"
             />
-          </a>
+          </Nav.Link>
+         </div>
         </Nav>
         </Navbar.Collapse>
       </Navbar>

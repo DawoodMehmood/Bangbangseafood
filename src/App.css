@@ -264,3 +264,9 @@ body{
 .footer-button{
   width: 180px;
 }
+
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}

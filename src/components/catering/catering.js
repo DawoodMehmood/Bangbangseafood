@@ -64,7 +64,7 @@ const Catering = () => {
               onSubmit={handleSubmit}
             >
               <Row className="mx-4" >
-                <Col >
+                <Col sm={6}>
                   <Form.Group>
                     <Form.Label>First Name</Form.Label>
                     <Form.Control
@@ -77,7 +77,7 @@ const Catering = () => {
                     />
                   </Form.Group>
                 </Col>
-                <Col>
+                <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Last Name</Form.Label>
                     <Form.Control
@@ -93,7 +93,7 @@ const Catering = () => {
               </Row>
 
               <Row className="mt-3 mx-4">
-                <Col>
+                <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -106,7 +106,7 @@ const Catering = () => {
                     />
                   </Form.Group>
                 </Col>
-                <Col>
+                <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Mobile Number</Form.Label>
                     <InputMask
