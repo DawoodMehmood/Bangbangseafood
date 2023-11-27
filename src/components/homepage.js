@@ -13,16 +13,16 @@ const Home = () => {
         alt="bang bang seafood & grill Logo"
         
       />
-      <div className='my-4'><Button className='show-menu-button' variant='warning'>VIEW MENU</Button></div>
+      <div className='my-5'><Button className='show-menu-button' variant='warning'>VIEW MENU</Button></div>
       <div className='home-text my-3'>
         <strong>3897 N Haverhill Rd, <br/>West Palm Beach, Fl</strong>
       </div>
       <div  className='home-text my-3'>
-        <strong>WEDNESDAY - FRIDAY<br/>12:00 to 7:00</strong>
+        <strong>TUESDAY - SATURDAY<br/>11:00 to 10:00</strong>
 
       </div>
       <div  className='home-text my-3'>
-        <strong>SATURDAY - SUNDAY<br/>12:00 to 7:00</strong>
+        <strong>SUNDAY - MONDAY<br/>11:00 to 8:00</strong>
        
       </div>
     </div>
