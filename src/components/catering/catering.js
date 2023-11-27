@@ -220,12 +220,13 @@ const Catering = () => {
                     />
                   </Form.Group>
                 </Row>
+                <Row>
                 <div className="send-button-catering">
                   {submissionStatus === "success" && (
-                    <p className="success-message">Email sent successfully!</p>
+                    <p className="success-message px-auto py-auto">Email sent successfully!</p>
                   )}
                   {submissionStatus === "failure" && (
-                    <p className="failure-message">
+                    <p className="failure-message px-auto py-auto">
                       Error sending email. Please try again later.
                     </p>
                   )}
@@ -238,6 +239,8 @@ const Catering = () => {
                     {isSubmitting ? "Sending..." : "Send Quote Request"}
                   </Button>
                 </div>
+                </Row>
+                
               </Form>
             </Col>
           </Row>
