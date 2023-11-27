@@ -72,9 +72,8 @@ const sendContactUsEmail = async (req, res) => {
     const mailToMyself = {
       from: "dawoodmehmood52222@gmail.com",
       to: "dawoodmehmood52222@gmail.com",
-      subject: `Contact Us Form Submission - ${name}`,
+      subject: `New Contact Us Message`,
       html: `
-      <h2>New Contact Us Inquiry</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Message:</strong> ${message}</p>
@@ -85,7 +84,7 @@ const sendContactUsEmail = async (req, res) => {
       from: "dawoodmehmood52222@gmail.com",
       to: email,
       subject: `Thank you for contacting us!`,
-      text: `Dear Customer,\n\n\tWe have received your message. We'll get back to you soon.\n\nBest Regards,\nBangBangSeaFood\n3897 N Haverhill Rd, West Palm Beach, Fl 33417`,
+      text: `Dear Customer,\n\nWe have received your message. We'll get back to you soon.\n\nBest Regards,\nBangBangSeaFood\n3897 N Haverhill Rd, \nWest Palm Beach, Fl 33417`,
     };
 
     // sending email to myself
