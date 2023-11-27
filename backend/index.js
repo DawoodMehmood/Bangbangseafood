@@ -13,6 +13,8 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 
 const app = express()
+
+// CORS to allow requests
 app.use(cors());
 
 //middleware

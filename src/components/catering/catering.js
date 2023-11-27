@@ -27,11 +27,31 @@ const Catering = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Replace this with your code to send data to the specified email
-    console.log("Form Data:", formData);
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/contact/sendCateringEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // sending the form data to the backend
+      });
+  
+      if (response.ok) {
+        // Email sent successfully
+        console.log('Email sent successfully');
+        // Add any additional handling or notifications here
+      } else {
+        // Handle errors if the email fails to send
+        console.error('Error sending email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
   };
+  
 
   return (
     <div>

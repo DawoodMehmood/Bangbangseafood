@@ -4,6 +4,8 @@ const express = require('express');
 const {
   createOrUpdateContact,
   getContact,
+  sendContactUsEmail,
+  sendCateringEmail,
 } = require('../controllers/contactController');
 
 const contactRouter = express.Router();
@@ -13,5 +15,11 @@ contactRouter.post('/saveContact', createOrUpdateContact);
 
 // Retrieve contact information
 contactRouter.get('/getContact', getContact);
+
+//send email on Contact us
+contactRouter.post('/sendContactUsEmail', sendContactUsEmail);
+
+//send email on Contact us
+contactRouter.post('/sendCateringEmail', sendCateringEmail);
 
 module.exports = contactRouter;
