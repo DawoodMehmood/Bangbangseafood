@@ -159,7 +159,7 @@ const Catering = () => {
                 </Row>
 
                 <Row className="mt-3 mx-4">
-                  <Col>
+                  <Col sm={6}>
                     <Form.Group>
                       <Form.Label>Number of Persons</Form.Label>
                       <div className="d-flex align-items-center">
@@ -187,7 +187,7 @@ const Catering = () => {
                       </div>
                     </Form.Group>
                   </Col>
-                  <Col>
+                  <Col sm={6}>
                     <Form.Group>
                       <Form.Label>Date</Form.Label>
                       <Form.Control
