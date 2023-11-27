@@ -18,7 +18,7 @@ const Menu = () => {
       <Container>        
       <Row>
             <div className='pre-order text-center my-5'>
-                <p>Contact us at 561.847.4078 to place your order<br/> or by clicking the button below.</p>
+                <p>Contact us at 561-847-4078 to place your order<br/> or by clicking the button below.</p>
                 <Button className='p-3 mt-3' variant='warning'>PLACE YOUR ORDERS HERE</Button>
             </div>
         </Row>

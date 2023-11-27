@@ -74,7 +74,7 @@ const Contact = () => {
 
       <Container>
         <div className="m-4">
-          <h2 className="address mx-4 my-5">SEND US A MESSAGE</h2>
+          <h2 className="address fs-1 mx-4 my-5">SEND US A MESSAGE</h2>
         </div>
       </Container>
 
@@ -146,8 +146,7 @@ const Contact = () => {
                   </Form.Group>
                 </Col>
               </Row>
-
-              <Form.Group className="mt-3">
+<Row> <Form.Group className="mt-3">
                 <Form.Label>Message</Form.Label>
                 <Form.Control
                   as="textarea"
@@ -158,8 +157,8 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                 />
-              </Form.Group>
-              <div className="send-button-contact">
+              </Form.Group></Row>
+<Row><div className="send-button-contact">
                 {submissionStatus === "success" && (
                   <p className="success-message">Email sent successfully!</p>
                 )}
@@ -176,7 +175,9 @@ const Contact = () => {
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
-              </div>
+              </div></Row>
+             
+              
             </Form>
           </Col>
         </Row>
