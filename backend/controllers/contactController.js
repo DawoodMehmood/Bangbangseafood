@@ -70,7 +70,7 @@ const sendContactUsEmail = async (req, res) => {
     const { name, email, message } = req.body;
     // Construct mailOptions
     const mailToMyself = {
-      from: "dawoodmehmood52222@gmail.com",
+      from: '"BangBangSeaFood" <dawoodmehmood52222@gmail.com>',
       to: "dawoodmehmood52222@gmail.com",
       subject: `New Contact Us Message`,
       html: `
@@ -81,7 +81,7 @@ const sendContactUsEmail = async (req, res) => {
     };
 
     const mailToCustomer = {
-      from: "dawoodmehmood52222@gmail.com",
+      from: '"BangBangSeaFood" <dawoodmehmood52222@gmail.com>',
       to: email,
       subject: `Thank you for contacting us!`,
       text: `Dear Customer,\n\nWe have received your message. We'll get back to you soon.\n\nBest Regards,\nBangBangSeaFood\n3897 N Haverhill Rd, \nWest Palm Beach, Fl 33417`,
@@ -107,7 +107,7 @@ const sendCateringEmail = async (req, res) => {
 
     // Construct mailOptions
     const mailToMyself = {
-      from: "dawoodmehmood52222@gmail.com",
+      from: '"BangBangSeaFood" <dawoodmehmood52222@gmail.com>',
       to: "dawoodmehmood52222@gmail.com",
       subject: `Catering Form Submission - ${firstName} ${lastName}`,
       html: `
@@ -122,7 +122,7 @@ const sendCateringEmail = async (req, res) => {
     };
 
     const mailToCustomer = {
-      from: "dawoodmehmood52222@gmail.com",
+      from: '"BangBangSeaFood" <dawoodmehmood52222@gmail.com>',
       to: email,
       subject: `Thank you for quote request!`,
       html: `
@@ -137,7 +137,7 @@ const sendCateringEmail = async (req, res) => {
           <li><strong>Date:</strong> ${date}</li>
           <li><strong>Message:</strong> ${message}</li>
         </ul>
-        <p>Best Regards,<br/>BangBangSeaFood<br/>3897 N Haverhill Rd, West Palm Beach, Fl 33417</p>
+        <p>Best Regards,<br/>BangBangSeaFood<br/>3897 N Haverhill Rd, <br/>West Palm Beach, Fl 33417</p>
       `,
     };
 

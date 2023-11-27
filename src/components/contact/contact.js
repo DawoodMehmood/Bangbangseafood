@@ -13,6 +13,8 @@ const Contact = () => {
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -25,6 +27,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
+      setIsSubmitting(true);
       const response = await fetch(
         "http://localhost:5000/api/contact/sendContactUsEmail",
         {
@@ -54,6 +57,8 @@ const Contact = () => {
     } catch (error) {
       console.error("Error sending email:", error);
       setSubmissionStatus("failure");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -167,8 +172,9 @@ const Contact = () => {
                   className="fs-6 mt-3 py-2 px-3"
                   variant="dark"
                   type="submit"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </div>
             </Form>

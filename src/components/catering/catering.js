@@ -21,6 +21,7 @@ const Catering = () => {
   };
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handlePersonsChange = (increment) => {
     setFormData((prevData) => ({
@@ -33,6 +34,8 @@ const Catering = () => {
     e.preventDefault();
 
     try {
+      setIsSubmitting(true);
+
       const response = await fetch(
         "http://localhost:5000/api/contact/sendCateringEmail",
         {
@@ -66,6 +69,8 @@ const Catering = () => {
     } catch (error) {
       console.error("Error sending email:", error);
       setSubmissionStatus("failure");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -228,8 +233,9 @@ const Catering = () => {
                     className="fs-6 mt-3 py-2 px-3"
                     variant="dark"
                     type="submit"
+                    disabled={isSubmitting}
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Quote Request"}
                   </Button>
                 </div>
               </Form>
