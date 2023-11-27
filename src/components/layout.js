@@ -30,7 +30,7 @@ const Layout = () => {
           <img src={brandImage} alt="Brand Logo" width="80" height="80" />
         </Navbar.Brand>
         <Navbar.Toggle onClick={handleToggle} />
-        <Navbar.Collapse in={expanded}>
+        <Navbar.Collapse className="nav-nav-flex" in={expanded}>
           <Nav className="nav-flex">
             <Nav.Link
               as={Link}
@@ -81,31 +81,33 @@ const Layout = () => {
             >
               Contact Us
             </Nav.Link>
-         
-         <div className="links">
-         <Nav.Link
-            target="_blank"
-            className="mx-1"
-            href="https://www.facebook.com/profile.php?id=61553102605034"
-          >
-            <FontAwesomeIcon
-              icon={faFacebook}
-              size="2x"
-              className="custom-facebook-icon"
-            />
-          </Nav.Link>
-          <Nav.Link
-            target="_blank"
-            href="https://instagram.com/bangbangseafoodandgrill?igshid=YTQwZjQ0NmI0OA=="
-          >
-            <FontAwesomeIcon
-              icon={faInstagram}
-              size="2x"
-              className="custom-instagram-icon mx-1"
-            />
-          </Nav.Link>
-         </div>
-        </Nav>
+          </Nav>
+
+          <Nav>
+            <div className="links">
+              <Nav.Link
+                target="_blank"
+                className="mx-1"
+                href="https://www.facebook.com/profile.php?id=61553102605034"
+              >
+                <FontAwesomeIcon
+                  icon={faFacebook}
+                  size="2x"
+                  className="custom-facebook-icon"
+                />
+              </Nav.Link>
+              <Nav.Link
+                target="_blank"
+                href="https://instagram.com/bangbangseafoodandgrill?igshid=YTQwZjQ0NmI0OA=="
+              >
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  size="2x"
+                  className="custom-instagram-icon mx-1"
+                />
+              </Nav.Link>
+            </div>
+          </Nav>
         </Navbar.Collapse>
       </Navbar>
       <Outlet />

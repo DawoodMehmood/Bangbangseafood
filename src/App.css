@@ -31,6 +31,11 @@ word-spacing: 4px;
   gap: 10px;
 }
 
+.nav-nav-flex{
+  display: flex;
+  justify-content: space-around;
+}
+
 .underline-on-hover-black {
   text-decoration: none; /* Remove the default underline */
   position: relative; /* Set the position to relative to make room for the underline */
