@@ -171,21 +171,22 @@ const Catering = () => {
                         <Button
                           variant="outline-dark"
                           onClick={() => handlePersonsChange(-1)}
+                          className="increase-decrease-button"
                         >
                           -
                         </Button>
                         <Form.Control
-                          type="number"
                           name="persons"
                           value={formData.persons}
                           onChange={handleChange}
                           min="1"
-                          className="text-center" // Add this class to center the text
+                          className="text-center"
                           required
                         />
                         <Button
                           variant="outline-dark"
                           onClick={() => handlePersonsChange(1)}
+                          className="increase-decrease-button"
                         >
                           +
                         </Button>
@@ -201,6 +202,7 @@ const Catering = () => {
                         value={formData.date}
                         onChange={handleChange}
                         required
+                        min={new Date().toISOString().split("T")[0]} // Set min to current date
                       />
                     </Form.Group>
                   </Col>
@@ -220,7 +222,7 @@ const Catering = () => {
                     />
                   </Form.Group>
                 </Row>
-                <Row>
+                <Row className="mx-4">
                   <div className="send-button-catering">
                     {submissionStatus === "success" && (
                       <p className="success-message mx-auto my-auto">

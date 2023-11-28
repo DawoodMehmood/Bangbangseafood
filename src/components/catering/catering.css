@@ -45,3 +45,16 @@ justify-content: end;
   .box{
     margin-bottom: 100px;
   }
+
+  .increase-decrease-button {
+   
+    border-color: rgb(213, 213, 213);
+  }
+
+  
+/* Add this to your CSS to remove the blue border on focus */
+.form-container input:focus,
+.form-container textarea:focus {
+  outline: none;
+  box-shadow: none;
+}

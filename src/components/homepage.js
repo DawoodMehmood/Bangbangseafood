@@ -1,9 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import logoimage from '../img/logo.png'
 
 const Home = () => {
-  console.log('Home component rendered');
+  const navigate = useNavigate();
+  const  HandleViewMenuButton =() => {
+    navigate('/menu');
+  }
+
   return (
     <div >
    
@@ -13,7 +18,7 @@ const Home = () => {
         alt="bang bang seafood & grill Logo"
         
       />
-      <div className='my-5'><Button className='show-menu-button' variant='warning'>VIEW MENU</Button></div>
+      <div className='my-5'><Button className='show-menu-button' variant='warning' onClick={HandleViewMenuButton}>VIEW MENU</Button></div>
       <div className='home-text my-3'>
         <strong>3897 N Haverhill Rd, <br/>West Palm Beach, Fl</strong>
       </div>

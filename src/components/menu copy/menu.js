@@ -72,14 +72,31 @@ const MenuCopy = () => {
               <img className="menu-img" src={Wings} alt="Wings & Po Boy's" />
             </div>
           </Col>
+          <Col sm={12}>
+            <div className="menuimage">
+              <div className="divider"></div>
+            </div>
+          </Col>
         </Row>
 
-        <Row className="pb-1 no-gutters ">
+        <Row className="pb-1 no-gutters mx-5">
           <Col sm={12}>
+            <div className="menuimage">
             <img className="menu-img" src={Shrimps} alt="Crab Boils" />
+            </div>
           </Col>
+
           <Col sm={12}>
+            <div className="menuimage">
+              <div className="divider"></div>
+            </div>
+          </Col>
+
+          <Col sm={12}>
+            <div className="menuimage">
             <img className="menu-img" src={Pastas} alt="Pastas" />
+            </div>
+            
           </Col>
         </Row>
       </Container>
