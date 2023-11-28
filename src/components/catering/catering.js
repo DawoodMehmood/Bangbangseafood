@@ -221,26 +221,27 @@ const Catering = () => {
                   </Form.Group>
                 </Row>
                 <Row>
-                <div className="send-button-catering">
-                  {submissionStatus === "success" && (
-                    <p className="success-message mx-auto my-auto">Email sent successfully!</p>
-                  )}
-                  {submissionStatus === "failure" && (
-                    <p className="failure-message mx-auto my-auto">
-                      Error sending email. Please try again later.
-                    </p>
-                  )}
-                  <Button
-                    className="fs-6 mt-3 py-2 px-3"
-                    variant="dark"
-                    type="submit"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Quote Request"}
-                  </Button>
-                </div>
+                  <div className="send-button-catering">
+                    {submissionStatus === "success" && (
+                      <p className="success-message mx-auto my-auto">
+                        Email sent successfully!
+                      </p>
+                    )}
+                    {submissionStatus === "failure" && (
+                      <p className="failure-message mx-auto my-auto">
+                        Error sending email. Please try again later.
+                      </p>
+                    )}
+                    <Button
+                      className="fs-6 mt-3 py-2 px-3"
+                      variant="dark"
+                      type="submit"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? "Sending..." : "Send Quote Request"}
+                    </Button>
+                  </div>
                 </Row>
-                
               </Form>
             </Col>
           </Row>
