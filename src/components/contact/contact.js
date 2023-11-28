@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSmile } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
@@ -10,6 +10,21 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const [contactInfo, setContactInfo] = useState({
+    address: "",
+    email: "",
+    number: "",
+  });
+
+  useEffect(() => {
+    // Fetch contact information from the API
+    fetch("http://localhost:5000/api/contact/getcontact")
+      .then((response) => response.json())
+      .then((data) => setContactInfo(data))
+      .catch((error) => console.error("Error fetching contact info:", error));
+  }, []);
+
 
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
@@ -89,7 +104,7 @@ const Contact = () => {
               </Col>
               <Col sm={9}>
                 <p className="fs-5">
-                  3897 N Haverhill Rd, West Palm Beach, Fl 33417
+                  {contactInfo.address}
                 </p>
               </Col>
             </Row>
@@ -100,7 +115,7 @@ const Contact = () => {
                 </p>
               </Col>
               <Col>
-                <p className="fs-5">123-456-789</p>
+                <p className="fs-5">{contactInfo.number}</p>
               </Col>
             </Row>
             <Row className="mt-2">
@@ -110,8 +125,8 @@ const Contact = () => {
                 </p>
               </Col>
               <Col sm={9}>
-                <p className="fs-5 text-lowercase">
-                  A.ABID@BANGBANGSEAFOOD.COM
+                <p className="fs-5 ">
+                  {contactInfo.email}
                 </p>
               </Col>
             </Row>

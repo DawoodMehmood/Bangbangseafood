@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -6,6 +6,20 @@ import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
+
+  const [contactInfo, setContactInfo] = useState({
+    address: "",
+    email: "",
+    number: "",
+  });
+
+  useEffect(() => {
+    // Fetch contact information from the API
+    fetch("http://localhost:5000/api/contact/getcontact")
+      .then((response) => response.json())
+      .then((data) => setContactInfo(data))
+      .catch((error) => console.error("Error fetching contact info:", error));
+  }, []);
 
   const handleButtonClick = () => {
     // Navigate to the "/coming-soon" path
@@ -45,7 +59,7 @@ const Footer = () => {
             <Col sm={3} className="text-center">
               <h4>Address</h4>
               <p className="mt-5">
-                3897 N Haverhill Rd, West Palm Beach, Fl 33417
+                {contactInfo.address}
               </p>
             </Col>
 
@@ -53,9 +67,9 @@ const Footer = () => {
             <Col sm={3} className="text-center">
               <h4>Contact Us</h4>
               <p className="mt-5">
-                Phone: 123-456-7890
+                Phone: {contactInfo.number}
                 <br />
-                a.abid@bangbangseafood.com
+                {contactInfo.email}
               </p>
             </Col>
 
