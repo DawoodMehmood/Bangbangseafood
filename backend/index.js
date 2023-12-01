@@ -2,10 +2,10 @@ const connectDB = require('./config/db')
 const colors = require('colors')
 const express = require('express')
 const dotenv = require('dotenv')
-const multer = require('multer')
 const cors = require('cors')
 const contactRoutes = require('./routes/contactRoutes')
 const menuRoutes = require('./routes/menuRoutes')
+const imageRoutes = require('./routes/imageRoutes')
 
 
 dotenv.config();
@@ -31,6 +31,7 @@ app.use(express.json());
 // routes
 app.use('/api/contact', contactRoutes)
 app.use('/api/menu', menuRoutes)
+app.use('/api/image', imageRoutes)
 
 
 //database connection using mongoose
