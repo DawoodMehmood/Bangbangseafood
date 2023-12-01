@@ -7,6 +7,12 @@ const bannerSchema = new mongoose.Schema({
   line2: {
     type: String,
   },
+  fb: {
+    type: String,
+  },
+  insta: {
+    type: String,
+  },
 });
 
 const Banner = mongoose.model("banner", bannerSchema);

@@ -1,30 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import brandImage from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const Layout = () => {
-  const location = useLocation();
+const Layout = ({bannerText}) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleToggle = () => {
     setExpanded(!expanded);
   };
-
-  const [bannerText, setBannerText] = useState({
-    line1: "",
-    line2: "",
-  });
-
-  useEffect(() => {
-    // Fetch contact information from the API
-    fetch("http://localhost:5000/api/misc/getBanner")
-      .then((response) => response.json())
-      .then((data) => setBannerText(data))
-      .catch((error) => console.error("Error fetching banner text:", error));
-  }, []);
 
   return (
     <>
@@ -101,7 +87,8 @@ const Layout = () => {
               <Nav.Link
                 target="_blank"
                 className="mx-1"
-                href="https://www.facebook.com/profile.php?id=61553102605034"
+                href={bannerText.fb}
+                rel="noopener noreferrer"
               >
                 <FontAwesomeIcon
                   icon={faFacebook}
@@ -111,7 +98,8 @@ const Layout = () => {
               </Nav.Link>
               <Nav.Link
                 target="_blank"
-                href="https://instagram.com/bangbangseafoodandgrill?igshid=YTQwZjQ0NmI0OA=="
+                href={bannerText.insta}
+                rel="noopener noreferrer"
               >
                 <FontAwesomeIcon
                   icon={faInstagram}

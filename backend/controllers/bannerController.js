@@ -5,14 +5,14 @@ const Banner = require("../models/bannerModel");
 const createOrUpdateBanner = async (req, res) => {
   try {
     // Validate the incoming data
-    const { line1, line2 } = req.body;
+    const { line1, line2, fb, insta } = req.body;
 
-    if (!line1 || !line2) {
-      return res.status(400).json({ error: "Text lines are required." });
+    if (!line1 || !line2 || !fb || !insta) {
+      return res.status(400).json({ error: "Text lines & links are required." });
     }
 
     // Use findOneAndUpdate to update or create a contact
-    const updatedContact = await Banner.findOneAndUpdate({}, req.body, {
+    const updatedData = await Banner.findOneAndUpdate({}, req.body, {
       upsert: true,
       new: true,
       setDefaultsOnInsert: true,
@@ -20,7 +20,7 @@ const createOrUpdateBanner = async (req, res) => {
 
     res.json({
       message: "Banner updated or created successfully.",
-      contact: updatedContact,
+      contact: updatedData,
     });
   } catch (error) {
     console.error(error);
@@ -30,8 +30,8 @@ const createOrUpdateBanner = async (req, res) => {
 
 const getBanner = async (req, res) => {
   try {
-    const contact = await Banner.findOne();
-    res.json(contact || {}); // Return an empty object if no contact is found
+    const data = await Banner.findOne();
+    res.json(data || {}); // Return an empty object if no contact is found
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });

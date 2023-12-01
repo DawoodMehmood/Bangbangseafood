@@ -1,25 +1,11 @@
-import React,{useEffect,useState} from "react";
+import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({contactInfo, bannerText}) => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
-
-  const [contactInfo, setContactInfo] = useState({
-    address: "",
-    email: "",
-    number: "",
-  });
-
-  useEffect(() => {
-    // Fetch contact information from the API
-    fetch("http://localhost:5000/api/contact/getcontact")
-      .then((response) => response.json())
-      .then((data) => setContactInfo(data))
-      .catch((error) => console.error("Error fetching contact info:", error));
-  }, []);
 
   const handleButtonClick = () => {
     // Navigate to the "/coming-soon" path
@@ -80,7 +66,8 @@ const Footer = () => {
                 <a
                   target="_blank"
                   className="mx-2"
-                  href="https://www.facebook.com/profile.php?id=61553102605034"
+                  href={bannerText.fb}
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon
                     icon={faFacebook}
@@ -91,7 +78,8 @@ const Footer = () => {
                 <a
                   target="_blank"
                   className="mx-2"
-                  href="https://instagram.com/bangbangseafoodandgrill?igshid=YTQwZjQ0NmI0OA=="
+                  href={bannerText.insta}
+                  rel="noopener noreferrer"
                 >
                   <FontAwesomeIcon
                     icon={faInstagram}
