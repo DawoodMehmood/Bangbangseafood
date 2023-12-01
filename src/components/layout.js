@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import brandImage from "../img/logo.png";
@@ -13,14 +13,27 @@ const Layout = () => {
     setExpanded(!expanded);
   };
 
+  const [bannerText, setBannerText] = useState({
+    line1: "",
+    line2: "",
+  });
+
+  useEffect(() => {
+    // Fetch contact information from the API
+    fetch("http://localhost:5000/api/misc/getBanner")
+      .then((response) => response.json())
+      .then((data) => setBannerText(data))
+      .catch((error) => console.error("Error fetching banner text:", error));
+  }, []);
+
   return (
     <>
       <div className="banner text-center">
         <Container className="py-1">
           <strong>
-            TAKE OUT RESTAURANT
+            {bannerText.line1}
             <br />
-            WE DELIVER
+            {bannerText.line2}
           </strong>
         </Container>
       </div>

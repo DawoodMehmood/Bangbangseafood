@@ -6,6 +6,7 @@ const cors = require('cors')
 const contactRoutes = require('./routes/contactRoutes')
 const menuRoutes = require('./routes/menuRoutes')
 const imageRoutes = require('./routes/imageRoutes')
+const miscRoutes = require('./routes/miscRoutes')
 
 
 dotenv.config();
@@ -32,6 +33,7 @@ app.use(express.json());
 app.use('/api/contact', contactRoutes)
 app.use('/api/menu', menuRoutes)
 app.use('/api/image', imageRoutes)
+app.use('/api/misc', miscRoutes)
 
 
 //database connection using mongoose
