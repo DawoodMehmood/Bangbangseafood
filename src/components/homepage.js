@@ -1,5 +1,5 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import React,{useEffect,useState} from "react";
 import { Button } from 'react-bootstrap';
 import logoimage from '../img/logo.png'
 
@@ -8,6 +8,24 @@ const Home = () => {
   const  HandleViewMenuButton =() => {
     navigate('/menu');
   }
+
+  const [contactInfo, setContactInfo] = useState({
+    address:"",
+    email:"",
+    number:"",
+    timings:[{
+      days:"",
+      time:""
+    }]
+  });
+
+  useEffect(() => {
+    // Fetch contact information from the API
+    fetch("http://localhost:5000/api/contact/getcontact")
+      .then((response) => response.json())
+      .then((data) => setContactInfo(data))
+      .catch((error) => console.error("Error fetching contact info:", error));
+  }, []);
 
   return (
     <div >
@@ -20,16 +38,15 @@ const Home = () => {
       />
       <div className='my-5'><Button className='show-menu-button' variant='warning' onClick={HandleViewMenuButton}>VIEW MENU</Button></div>
       <div className='home-text my-3'>
-        <strong>3897 N Haverhill Rd, <br/>West Palm Beach, Fl</strong>
+        <strong>{contactInfo.address}</strong>
       </div>
-      <div  className='home-text my-3'>
-        <strong>TUESDAY - SATURDAY<br/>11:00 to 10:00</strong>
 
-      </div>
-      <div  className='home-text my-3'>
-        <strong>SUNDAY - MONDAY<br/>11:00 to 8:00</strong>
-       
-      </div>
+      {contactInfo.timings.map((dayAndTime) => (
+        <div  className='home-text my-3'>
+          <strong>{dayAndTime.days}<br/>{dayAndTime.time}</strong>
+        </div>
+      ))}
+
     </div>
     
     </div>
