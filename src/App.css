@@ -187,7 +187,12 @@ body{
 .about-text {
   padding: 20px;
   font-size: 1.2em;
+  color: #dadada;
   
+}
+
+.about-container {
+  background-color: #222222;
 }
 
 /* Styles for the centered image */
@@ -224,6 +229,7 @@ body{
   margin-top: 20px;
   padding: 20px;
   font-size: 1.2em;
+  color: #dadada ;
 }
 
 .centered-content h2 {
