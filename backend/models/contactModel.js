@@ -1,6 +1,15 @@
 const mongoose = require('mongoose')
 
-const contactSchema = mongoose.Schema({
+const timingSchema = new mongoose.Schema({
+    days: {
+        type: String
+    },
+    time: {
+        type: String
+    }
+})
+
+const contactSchema = new mongoose.Schema({
     address: {
         type: String,
     },
@@ -10,11 +19,7 @@ const contactSchema = mongoose.Schema({
     number:{
         type: Number,
     },
-    timing: {
-        type: String,
-    }
-}, {
-    timestamps: true
+    timings: [timingSchema]
 })
 
 const Contact = mongoose.model('contact', contactSchema)
