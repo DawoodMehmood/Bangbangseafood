@@ -26,7 +26,7 @@ const Layout = ({bannerText}) => {
 
       <Navbar expand="lg" className={` px-5 dark-navbar`} variant="dark">
         <Navbar.Brand as={Link} to="/">
-          <img src={brandImage} alt="Brand Logo" width="80" height="80" />
+          <img src={brandImage} alt="BangBangSeafood Logo" width="80" height="80" />
         </Navbar.Brand>
         <Navbar.Toggle onClick={handleToggle} />
         <Navbar.Collapse className="nav-nav-flex" in={expanded}>
