@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSmile } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import InputMask from "react-input-mask";
+import ReCAPTCHA from "react-google-recaptcha";
 import "./catering.css";
 
 const Catering = () => {
@@ -14,6 +15,7 @@ const Catering = () => {
     message: "",
     date: "",
   });
+  const [capval, setCapval] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -222,6 +224,12 @@ const Catering = () => {
                     />
                   </Form.Group>
                 </Row>
+                <Row className="mt-4">
+                  <ReCAPTCHA
+                  sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
+                  onChange={(e)=> setCapval(e)}
+                  />
+                </Row>
                 <Row className="mx-4">
                   <div className="send-button-catering">
                     {submissionStatus === "success" && (
@@ -238,7 +246,7 @@ const Catering = () => {
                       className="fs-6 mt-3 py-2 px-3"
                       variant="dark"
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || capval === null}
                     >
                       {isSubmitting ? "Sending..." : "Send Quote Request"}
                     </Button>
