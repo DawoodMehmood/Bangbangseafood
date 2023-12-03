@@ -11,6 +11,7 @@ import PreOrder from './components/pre-order/pre-order';
 import Login from './components/admin/login/login';
 import AdminLayout from './layouts/adminLayout';
 import MainLayout from './layouts/mainLayout';
+import AdminHome from './components/admin/main/adminHome';
 import './App.css';
 
 function App() {
@@ -18,11 +19,17 @@ function App() {
     <Routes>
       {/* Admin Panel Routes */}
       <Route
-        path="/bangbangseafood/controlUddaycontrol/controlpanel"
+        path="/bangbangseafood/controlUddaycontrol/controlpanel/*"
         element={
+          <>
           <AdminLayout>
-            <Login />
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/adminhome" element={<AdminHome />} />
+            </Routes>
+            
           </AdminLayout>
+          </>
         }
       />
 
