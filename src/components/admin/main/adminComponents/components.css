@@ -1,0 +1,70 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+
+.defaultImage {
+    width: 60vw;
+    height: 60vh;
+    object-fit: contain;
+}
+
+.adminBanner h2 {
+    font-size: 2rem;
+}
+
+.adminBanner form {
+    margin: 0;
+}
+
+.adminBannerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.adminBannerForm input {
+    width: 30vw;
+    outline: none;
+    border: none;
+}
+
+.adminBannerForm button {
+    font-size: large;
+    background-color: #383838;
+    color: white;
+    font-weight: 500;
+
+    &:hover {
+        background-color: #ffffff;
+        color: rgb(2, 2, 2);
+    }
+}
+
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+    font-weight: 500;
+}
+
+.fbColor {
+    color: #0496FF;
+}
+
+.instaColor {
+    color: #EE4266;
+}
+
+.bannerLine {
+    text-align: center;
+    background-color: red;
+    color: #ffffff;
+    font-weight: 500;
+}
