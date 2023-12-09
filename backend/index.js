@@ -7,6 +7,7 @@ const contactRoutes = require("./routes/contactRoutes");
 const menuRoutes = require("./routes/menuRoutes");
 const imageRoutes = require("./routes/imageRoutes");
 const bannerRoutes = require("./routes/bannerRoutes");
+const credentialRoutes = require("./routes/credentialRoutes");
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use("/api/contact", contactRoutes);
 app.use("/api/menu", menuRoutes);
 app.use("/api/image", imageRoutes);
 app.use("/api/banner", bannerRoutes);
+app.use("/api/credential", credentialRoutes);
 
 //database connection using mongoose
 connectDB()
