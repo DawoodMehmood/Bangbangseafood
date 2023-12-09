@@ -55,6 +55,7 @@ const BannerComponent = () => {
           throw new Error("Network response was not ok");
         }
         showToast("Record Updated Successfully", "success");
+        setCheckFormData(formData);
         return response.json();
       })
       .then((data) => {
@@ -88,6 +89,7 @@ const BannerComponent = () => {
             className="bannerLine"
             value={formData.line1}
             autoComplete="off"
+            required
             onChange={handleInputChange}
           />
         </div>
@@ -99,6 +101,7 @@ const BannerComponent = () => {
             className="bannerLine"
             value={formData.line2}
             autoComplete="off"
+            placeholder="(optional)"
             onChange={handleInputChange}
           />
         </div>
@@ -113,6 +116,7 @@ const BannerComponent = () => {
             className="fbColor"
             value={formData.fb}
             autoComplete="off"
+            required
             onChange={handleInputChange}
           />
         </div>
@@ -125,6 +129,7 @@ const BannerComponent = () => {
             className="instaColor"
             value={formData.insta}
             autoComplete="off"
+            required
             onChange={handleInputChange}
           />
         </div>
