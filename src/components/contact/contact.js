@@ -76,13 +76,13 @@ const Contact = () => {
 
   return (
     <div>
-      <div class="contact-image">
+      <div className="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
           alt="Contact Us Background img"
           loading="lazy"
         />
-        <h1 class="fs-1 centered-heading">CONTACT US</h1>
+        <h1 className="fs-1 centered-heading">CONTACT US</h1>
       </div>
 
       <Container>

@@ -1,7 +1,7 @@
 // ... Other imports ...
 
 import React, { useState, useEffect } from "react";
-import { Card, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import "./../contact/contact.css";
 import "./menu.css";
 import SoulBowl from "./../../img/Soul Bowl.png";
@@ -48,7 +48,7 @@ const MenuCopy = () => {
       <div className="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="Contact Us Image"
+          alt="Contact Us img"
           loading="lazy"
         />
         <h1 className="fs-1 centered-heading">MENU</h1>
@@ -93,7 +93,12 @@ const MenuCopy = () => {
         <Row className="pb-1 no-gutters mx-5">
           <Col sm={12}>
             <div className="menuimage">
-              <img className="menu-img" src={Shrimps} alt="Crab Boils" loading="lazy" />
+              <img
+                className="menu-img"
+                src={Shrimps}
+                alt="Crab Boils"
+                loading="lazy"
+              />
             </div>
           </Col>
 
@@ -105,7 +110,12 @@ const MenuCopy = () => {
 
           <Col sm={12}>
             <div className="menuimage">
-              <img className="menu-img" src={Pastas} alt="Pastas" loading="lazy" />
+              <img
+                className="menu-img"
+                src={Pastas}
+                alt="Pastas"
+                loading="lazy"
+              />
             </div>
           </Col>
         </Row>
