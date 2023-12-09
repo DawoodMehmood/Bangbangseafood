@@ -12,15 +12,15 @@
     object-fit: contain;
 }
 
-.adminBanner h2 {
+.adminComponent h2 {
     font-size: 2rem;
 }
 
-.adminBanner form {
+.adminComponent form {
     margin: 0;
 }
 
-.adminBannerForm {
+.adminComponentForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,17 +28,18 @@
     gap: 15px;
 }
 
-.adminBannerForm input {
+.adminComponentForm input {
     width: 30vw;
     outline: none;
     border: none;
 }
 
-.adminBannerForm button {
+.adminComponentForm button {
     font-size: large;
     background-color: #383838;
     color: white;
     font-weight: 500;
+    margin-top: 10px;
 
     &:hover {
         background-color: #ffffff;
@@ -67,4 +68,8 @@
     background-color: red;
     color: #ffffff;
     font-weight: 500;
+}
+
+.timingInputs input {
+    width: 15vw;
 }
