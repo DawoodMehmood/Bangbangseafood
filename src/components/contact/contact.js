@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSmile } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./contact.css";
 
@@ -24,8 +22,6 @@ const Contact = () => {
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));
   }, []);
-
-  const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -57,7 +53,6 @@ const Contact = () => {
         // Email sent successfully
         console.log("Email sent successfully");
         // Add any additional handling or notifications here
-        setSubmissionStatus("success");
         setFormData({
           name: "",
           email: "",
@@ -66,11 +61,9 @@ const Contact = () => {
       } else {
         // Handle errors if the email fails to send
         console.error("Error sending email");
-        setSubmissionStatus("failure");
       }
     } catch (error) {
       console.error("Error sending email:", error);
-      setSubmissionStatus("failure");
     } finally {
       setIsSubmitting(false);
     }
@@ -81,9 +74,9 @@ const Contact = () => {
       <div class="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="Contact Us Background Image"
+          alt="Contact Us Background img"
           loading="lazy"
-        />  
+        />
         <h1 class="fs-1 centered-heading">CONTACT US</h1>
       </div>
 
@@ -207,6 +200,7 @@ const Contact = () => {
             height="450"
             allowfullscreen=""
             loading="lazy"
+            title="bangbangseafood google map"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
