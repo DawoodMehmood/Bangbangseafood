@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSmile } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import InputMask from "react-input-mask";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./catering.css";
+import { showToast } from "../toast";
+import BACKEND_URL from "../../config";
 
 const Catering = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +22,6 @@ const Catering = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const [submissionStatus, setSubmissionStatus] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handlePersonsChange = (increment) => {
@@ -39,7 +38,7 @@ const Catering = () => {
       setIsSubmitting(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/contact/sendCateringEmail",
+        `${BACKEND_URL}/api/contact/sendCateringEmail`,
         {
           method: "POST",
           headers: {
@@ -51,9 +50,9 @@ const Catering = () => {
 
       if (response.ok) {
         // Email sent successfully
-        console.log("Email sent successfully");
+        showToast("Email sent successfully!", "success");
+
         // Add any additional handling or notifications here
-        setSubmissionStatus("success");
         setFormData({
           firstName: "",
           lastName: "",
@@ -66,11 +65,11 @@ const Catering = () => {
       } else {
         // Handle errors if the email fails to send
         console.error("Error sending email");
-        setSubmissionStatus("failure");
+        showToast("Error sending email", "error");
       }
     } catch (error) {
       console.error("Error sending email:", error);
-      setSubmissionStatus("failure");
+      showToast("Error sending email", "error");
     } finally {
       setIsSubmitting(false);
     }
@@ -81,7 +80,7 @@ const Catering = () => {
       <div class="catering-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="catering Us Image"
+          alt="catering img"
           loading="lazy"
         />
         <h1 class="fs-1 centered-heading">CATERING</h1>
@@ -227,22 +226,12 @@ const Catering = () => {
                 </Row>
                 <Row className="mt-4">
                   <ReCAPTCHA
-                  sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
-                  onChange={(e)=> setCapval(e)}
+                    sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
+                    onChange={(e) => setCapval(e)}
                   />
                 </Row>
                 <Row className="mx-4">
                   <div className="send-button-catering">
-                    {/* {submissionStatus === "success" && (
-                      <p className="success-message mx-auto my-auto">
-                        Email sent successfully!
-                      </p>
-                    )} */}
-                    {/* {submissionStatus === "failure" && (
-                      <p className="failure-message mx-auto my-auto">
-                        Error sending email. Please try again later.
-                      </p>
-                    )} */}
                     <Button
                       className="fs-6 mt-3 py-2 px-3"
                       variant="dark"
