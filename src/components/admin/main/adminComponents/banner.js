@@ -76,8 +76,8 @@ const BannerComponent = () => {
   };
 
   return (
-    <div className="adminBanner container">
-      <form className="adminBannerForm">
+    <div className="adminComponent container">
+      <form className="adminComponentForm">
         <h2>Banner Text</h2>
 
         <div className="section">
