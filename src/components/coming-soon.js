@@ -14,6 +14,7 @@ const ComingSoon = () => {
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
           alt="catering Us Image"
+          loading="lazy"
         />
         <h1 class="fs-1 centered-heading"></h1>
       </div>

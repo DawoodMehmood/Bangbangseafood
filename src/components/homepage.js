@@ -34,6 +34,7 @@ const Home = () => {
       <img
         src={logoimage}
         alt="bang bang seafood & grill Logo"
+        loading='lazy'
         
       />
       <div className='my-5'><Button className='show-menu-button' variant='warning' onClick={HandleViewMenuButton}>VIEW MENU</Button></div>

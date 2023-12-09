@@ -30,7 +30,7 @@ const addTextInfiniteLoop = () => {
       <Container>
         <Row>
           <div className='centered-image-container'>
-            <img src={image} />
+            <img src={image} alt='logo image' loading='lazy' />
           </div>
         </Row>
         <Row>
@@ -71,13 +71,13 @@ const addTextInfiniteLoop = () => {
           </Col>
           <Col sm={6} xs={12} className='about-col1'>
             <div className='side-image-container'>
-              <img src="https://as1.ftcdn.net/v2/jpg/02/68/22/20/1000_F_268222004_kdPmrr5Mg4yrh3kq4Rhway1zNMHUX6d7.jpg" />
+              <img src="https://as1.ftcdn.net/v2/jpg/02/68/22/20/1000_F_268222004_kdPmrr5Mg4yrh3kq4Rhway1zNMHUX6d7.jpg" alt='side image 1' loading='lazy' />
             </div>
             <div className='about-text'>
               <p>Issaih Percy (left) and John Williams prepare "soul rolls" in the kitchen of Soul Bowls, a new soul food restaurant in the South Meadows neighborhood of Hartford. Photograph by Mark Mirko | mmirko@courant.com (Mark Mirko/The Hartford Courant)</p>
             </div>
             <div className='side-image-container'>
-              <img src="https://as1.ftcdn.net/v2/jpg/00/78/29/06/1000_F_78290623_jxPQwZoKVz8Y7hCtCp8PfjlWfLmfptpP.jpg" />
+              <img src="https://as1.ftcdn.net/v2/jpg/00/78/29/06/1000_F_78290623_jxPQwZoKVz8Y7hCtCp8PfjlWfLmfptpP.jpg" alt='side image 2' loading='lazy' />
             </div>
             <div className='about-text'>
               <p>Entrepreneur Willie Fair (left), helps customer Kenshaun Gamble at Soul Bowls, a new soul food restaurant in the South Meadows neighborhood of Hartford. Photograph by Mark Mirko | mmirko@courant.com (Mark Mirko/The Hartford Courant)</p>

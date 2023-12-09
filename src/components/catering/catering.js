@@ -82,6 +82,7 @@ const Catering = () => {
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
           alt="catering Us Image"
+          loading="lazy"
         />
         <h1 class="fs-1 centered-heading">CATERING</h1>
       </div>
@@ -232,16 +233,16 @@ const Catering = () => {
                 </Row>
                 <Row className="mx-4">
                   <div className="send-button-catering">
-                    {submissionStatus === "success" && (
+                    {/* {submissionStatus === "success" && (
                       <p className="success-message mx-auto my-auto">
                         Email sent successfully!
                       </p>
-                    )}
-                    {submissionStatus === "failure" && (
+                    )} */}
+                    {/* {submissionStatus === "failure" && (
                       <p className="failure-message mx-auto my-auto">
                         Error sending email. Please try again later.
                       </p>
-                    )}
+                    )} */}
                     <Button
                       className="fs-6 mt-3 py-2 px-3"
                       variant="dark"

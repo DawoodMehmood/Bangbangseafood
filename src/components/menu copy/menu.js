@@ -49,6 +49,7 @@ const MenuCopy = () => {
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
           alt="Contact Us Image"
+          loading="lazy"
         />
         <h1 className="fs-1 centered-heading">MENU</h1>
       </div>
@@ -57,7 +58,12 @@ const MenuCopy = () => {
         <Row className="no-gutters mx-5">
           <Col sm={12}>
             <div className="menuimage">
-              <img className="menu-img" src={SoulBowl} alt="Soul Bowl" />
+              <img
+                className="menu-img"
+                src={SoulBowl}
+                alt="Soul Bowl"
+                loading="lazy"
+              />
             </div>
           </Col>
 
@@ -69,7 +75,12 @@ const MenuCopy = () => {
 
           <Col sm={12}>
             <div className="menuimage">
-              <img className="menu-img" src={Wings} alt="Wings & Po Boy's" />
+              <img
+                className="menu-img"
+                src={Wings}
+                alt="Wings & Po Boy's"
+                loading="lazy"
+              />
             </div>
           </Col>
           <Col sm={12}>
@@ -82,7 +93,7 @@ const MenuCopy = () => {
         <Row className="pb-1 no-gutters mx-5">
           <Col sm={12}>
             <div className="menuimage">
-            <img className="menu-img" src={Shrimps} alt="Crab Boils" />
+              <img className="menu-img" src={Shrimps} alt="Crab Boils" loading="lazy" />
             </div>
           </Col>
 
@@ -94,9 +105,8 @@ const MenuCopy = () => {
 
           <Col sm={12}>
             <div className="menuimage">
-            <img className="menu-img" src={Pastas} alt="Pastas" />
+              <img className="menu-img" src={Pastas} alt="Pastas" loading="lazy" />
             </div>
-            
           </Col>
         </Row>
       </Container>

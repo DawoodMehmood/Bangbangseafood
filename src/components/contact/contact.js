@@ -25,7 +25,6 @@ const Contact = () => {
       .catch((error) => console.error("Error fetching contact info:", error));
   }, []);
 
-
   const [submissionStatus, setSubmissionStatus] = useState(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -82,8 +81,9 @@ const Contact = () => {
       <div class="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="Contact Us Image"
-        />
+          alt="Contact Us Background Image"
+          loading="lazy"
+        />  
         <h1 class="fs-1 centered-heading">CONTACT US</h1>
       </div>
 
@@ -103,9 +103,7 @@ const Contact = () => {
                 </p>
               </Col>
               <Col sm={9}>
-                <p className="fs-5">
-                  {contactInfo.address}
-                </p>
+                <p className="fs-5">{contactInfo.address}</p>
               </Col>
             </Row>
             <Row className="my-2">
@@ -125,9 +123,7 @@ const Contact = () => {
                 </p>
               </Col>
               <Col sm={9}>
-                <p className="fs-5 ">
-                  {contactInfo.email}
-                </p>
+                <p className="fs-5 ">{contactInfo.email}</p>
               </Col>
             </Row>
           </Col>
@@ -178,7 +174,7 @@ const Contact = () => {
               </Row>
               <Row>
                 <div className="send-button-contact">
-                  {submissionStatus === "success" && (
+                  {/* {submissionStatus === "success" && (
                     <p className="success-message mx-auto my-auto">
                       Email sent successfully!
                     </p>
@@ -187,7 +183,7 @@ const Contact = () => {
                     <p className="failure-message mx-auto my-auto">
                       Error sending email. Please try again later.
                     </p>
-                  )}
+                  )} */}
                   <Button
                     className="fs-6 mt-3 py-2 px-3"
                     variant="dark"
