@@ -76,6 +76,7 @@ const ContactInfo = () => {
           throw new Error("Network response was not ok");
         }
         showToast("Record Updated Successfully", "success");
+        setCheckFormData(formData);
         return response.json();
       })
       .then((data) => {
@@ -108,6 +109,7 @@ const ContactInfo = () => {
             name="address"
             value={formData.address}
             autoComplete="off"
+            required
             onChange={(e) => handleInputChange(e, `address`)}
           />
         </div>
@@ -115,10 +117,11 @@ const ContactInfo = () => {
         <div className="section">
           <label>Email</label>
           <input
-            type="text"
+            type="email"
             name="email"
             value={formData.email}
             autoComplete="off"
+            required
             onChange={(e) => handleInputChange(e, `email`)}
           />
         </div>
@@ -126,10 +129,11 @@ const ContactInfo = () => {
         <div className="section">
           <label>Number</label>
           <input
-            type="text"
+            type="tel"
             name="number"
             value={formData.number}
             autoComplete="off"
+            required
             onChange={(e) => handleInputChange(e, `number`)}
           />
         </div>
@@ -142,6 +146,7 @@ const ContactInfo = () => {
               name={`days${index}`}
               value={timing.days}
               autoComplete="off"
+              placeholder="(optional)"
               onChange={(e) => handleInputChange(e, `days${index}`)}
             />
             <>-</>
@@ -150,6 +155,7 @@ const ContactInfo = () => {
               name={`time${index}`}
               value={timing.time}
               autoComplete="off"
+              placeholder="(optional)"
               onChange={(e) => handleInputChange(e, `time${index}`)}
             />
           </div>
