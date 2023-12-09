@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./contact.css";
 import { showToast } from "../toast";
+import BACKEND_URL from "../../config";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ const Contact = () => {
 
   useEffect(() => {
     // Fetch contact information from the API
-    fetch("http://localhost:5000/api/contact/getcontact")
+    fetch(`${BACKEND_URL}/api/contact/getcontact`)
       .then((response) => response.json())
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));
@@ -40,7 +41,7 @@ const Contact = () => {
     try {
       setIsSubmitting(true);
       const response = await fetch(
-        "http://localhost:5000/api/contact/sendContactUsEmail",
+        `${BACKEND_URL}/api/contact/sendContactUsEmail`,
         {
           method: "POST",
           headers: {
