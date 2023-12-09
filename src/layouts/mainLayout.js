@@ -1,5 +1,5 @@
 // MainLayout.jsx
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
@@ -8,13 +8,15 @@ const MainLayout = ({ children }) => {
   const location = useLocation();
 
   const [contactInfo, setContactInfo] = useState({
-    address:"",
-    email:"",
-    number:"",
-    timings:[{
-      days:"",
-      time:""
-    }]
+    address: "",
+    email: "",
+    number: "",
+    timings: [
+      {
+        days: "",
+        time: "",
+      },
+    ],
   });
 
   const [bannerText, setBannerText] = useState({
@@ -25,12 +27,10 @@ const MainLayout = ({ children }) => {
   });
 
   useEffect(() => {
-
-    fetch("http://localhost:5000/api/misc/getBanner")
+    fetch("http://localhost:5000/api/banner/getBanner")
       .then((response) => response.json())
       .then((data) => setBannerText(data))
       .catch((error) => console.error("Error fetching banner text:", error));
-
 
     // Fetch contact information from the API
     fetch("http://localhost:5000/api/contact/getcontact")
@@ -38,7 +38,6 @@ const MainLayout = ({ children }) => {
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));
   }, []);
-
 
   return (
     <>
