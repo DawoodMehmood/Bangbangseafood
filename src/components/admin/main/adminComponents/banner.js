@@ -19,7 +19,7 @@ const BannerComponent = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/api/misc/getBanner`)
+    fetch(`${BACKEND_URL}/api/banner/getBanner`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -43,7 +43,7 @@ const BannerComponent = () => {
 
   const updateCall = () => {
     setIsLoading(true);
-    fetch(`${BACKEND_URL}/api/misc/saveBanner`, {
+    fetch(`${BACKEND_URL}/api/banner/saveBanner`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
