@@ -69,7 +69,7 @@ const BannerComponent = () => {
 
   const handleUpdate = () => {
     if (formData === checkFormData) {
-      showToast("No changes detected", "error");
+      showToast("No changes detected", "warning");
     } else {
       updateCall();
     }
