@@ -68,7 +68,7 @@ const BannerComponent = () => {
   };
 
   const handleUpdate = () => {
-    if (formData === checkFormData) {
+    if (JSON.stringify(formData) === JSON.stringify(checkFormData)) {
       showToast("No changes detected", "warning");
     } else {
       updateCall();
