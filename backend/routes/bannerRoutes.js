@@ -1,4 +1,4 @@
-// routes/contactRoutes.js
+// routes/bannerRoutes.js
 
 const express = require("express");
 const {
