@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./contact.css";
+import { showToast } from "../toast";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -51,7 +52,8 @@ const Contact = () => {
 
       if (response.ok) {
         // Email sent successfully
-        console.log("Email sent successfully");
+        showToast("Email sent successfully!", "success");
+
         // Add any additional handling or notifications here
         setFormData({
           name: "",
@@ -61,9 +63,11 @@ const Contact = () => {
       } else {
         // Handle errors if the email fails to send
         console.error("Error sending email");
+        showToast("Error sending email", "error");
       }
     } catch (error) {
       console.error("Error sending email:", error);
+      showToast("Error sending email", "error");
     } finally {
       setIsSubmitting(false);
     }
@@ -167,16 +171,6 @@ const Contact = () => {
               </Row>
               <Row>
                 <div className="send-button-contact">
-                  {/* {submissionStatus === "success" && (
-                    <p className="success-message mx-auto my-auto">
-                      Email sent successfully!
-                    </p>
-                  )}
-                  {submissionStatus === "failure" && (
-                    <p className="failure-message mx-auto my-auto">
-                      Error sending email. Please try again later.
-                    </p>
-                  )} */}
                   <Button
                     className="fs-6 mt-3 py-2 px-3"
                     variant="dark"
