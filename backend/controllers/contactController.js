@@ -1,6 +1,7 @@
 // controllers/contactController.js
 
 const Contact = require("../models/contactModel");
+const Credential = require("../models/credentialModel");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
 dotenv.config();
@@ -45,17 +46,19 @@ const getContact = async (req, res) => {
 
 //----------------------------------EMAIL SETTINGS------------------------------------------------------------
 
-const transporter = nodemailer.createTransport({
-  service: "gmail", // Use your email service here (e.g., Gmail, Outlook, etc.)
-  secure: true,
-  auth: {
-    user: process.env.EMAIL_USER, // Replace with your email
-    pass: process.env.EMAIL_PASS, // Replace with your password
-  },
-});
-
 const emailSender = async (mailOptions) => {
   try {
+    const data = await Credential.findOne();
+    const credentials = data || {};
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      secure: true,
+      auth: {
+        user: credentials.email,
+        pass: credentials.key,
+      },
+    });
+
     const info = await transporter.sendMail(mailOptions);
     console.log("Email sent:", info.response);
     return info;
@@ -67,11 +70,13 @@ const emailSender = async (mailOptions) => {
 
 const sendContactUsEmail = async (req, res) => {
   try {
+    const data = await Credential.findOne();
+    const credentials = data || {};
     const { name, email, message } = req.body;
     // Construct mailOptions
     const mailToMyself = {
-      from: '"BangBangSeaFood&Grill" <dawoodmehmood52222@gmail.com>',
-      to: "dawoodmehmood52222@gmail.com",
+      from: `"BangBangSeaFood&Grill" <${credentials.email}>`,
+      to: `${credentials.email}`,
       subject: `New Contact Us Message`,
       html: `
       <p><strong>Name:</strong> ${name}</p>
@@ -81,7 +86,7 @@ const sendContactUsEmail = async (req, res) => {
     };
 
     const mailToCustomer = {
-      from: '"BangBangSeaFood&Grill" <dawoodmehmood52222@gmail.com>',
+      from: `"BangBangSeaFood&Grill" <${credentials.email}>`,
       to: email,
       subject: `Thank you for contacting us!`,
       text: `Dear Customer,\n\nWe have received your message. We'll get back to you soon.\n\nBangBangSeaFood&Grill\n210-124-1414\n3897 N Haverhill Rd, \nWest Palm Beach, Fl 33417`,
@@ -102,13 +107,15 @@ const sendContactUsEmail = async (req, res) => {
 
 const sendCateringEmail = async (req, res) => {
   try {
+    const data = await Credential.findOne();
+    const credentials = data || {};
     const { firstName, lastName, email, mobile, persons, date, message } =
       req.body;
 
     // Construct mailOptions
     const mailToMyself = {
-      from: '"BangBangSeaFood&Grill" <dawoodmehmood52222@gmail.com>',
-      to: "dawoodmehmood52222@gmail.com",
+      from: `"BangBangSeaFood&Grill" <${credentials.email}>`,
+      to: `${credentials.email}`,
       subject: `Catering Form Submission - ${firstName} ${lastName}`,
       html: `
         <h2>Catering Quote Request</h2>
@@ -122,7 +129,7 @@ const sendCateringEmail = async (req, res) => {
     };
 
     const mailToCustomer = {
-      from: '"BangBangSeaFood&Grill" <dawoodmehmood52222@gmail.com>',
+      from: `"BangBangSeaFood&Grill" <${credentials.email}>`,
       to: email,
       subject: `Thank you for quote request!`,
       html: `
