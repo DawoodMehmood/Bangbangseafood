@@ -73,15 +73,12 @@ const ContactInfo = () => {
     })
       .then((response) => {
         if (!response.ok) {
+          showToast("Error Updating Record", "error");
           throw new Error("Network response was not ok");
         }
         showToast("Record Updated Successfully", "success");
         setCheckFormData(formData);
         return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        // Optionally, perform any action upon successful update
       })
       .catch((error) => {
         console.error("Error updating contact:", error);
