@@ -1,165 +1,45 @@
-// controllers/menuController.js
+// menuController.js
+const MenuImages = require("../models/menuModel");
 
-const Menu = require("../models/menuModel");
-
-// Create a new category with dishes
-const createCategory = async (req, res) => {
+// Create a new gallery image
+const createGalleryImage = async (req, res) => {
   try {
-    const {
-      categoryName,
-      CategoryDescription,
-      categoryNote,
-      categoryAddons,
-      dishes,
-    } = req.body;
-
-    const newCategory = new Menu({
-      categoryName,
-      CategoryDescription,
-      categoryNote,
-      categoryAddons,
-      dishes,
+    const { sequenceNo, image } = req.body;
+    const newGalleryImage = await MenuImages.create({
+      sequenceNo,
+      image,
     });
-
-    await newCategory.save();
-    res.status(201).json({ message: "Category created successfully." });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-// Get all categories and their dishes
-const getAllCategories = async (req, res) => {
-  try {
-    const categories = await Menu.find();
-    res.json(categories);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-// Update a category and its dishes
-const updateCategory = async (req, res) => {
-  try {
-    const { categoryId } = req.params;
-    const {
-      categoryName,
-      CategoryDescription,
-      categoryNote,
-      categoryAddons,
-      dishes,
-    } = req.body;
-
-    const updatedCategory = await Menu.findByIdAndUpdate(
-      categoryId,
-      {
-        categoryName,
-        CategoryDescription,
-        categoryNote,
-        categoryAddons,
-        dishes,
-      },
-      { new: true }
-    );
-
-    res.json({
-      message: "Category updated successfully.",
-      menu: updatedCategory,
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-// Delete a category
-const deleteCategory = async (req, res) => {
-  try {
-    const { categoryId } = req.params;
-    await Menu.findByIdAndDelete(categoryId);
-    res.json({ message: "Category deleted successfully." });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-};
-
-// Add a new dish to an existing category
-const addDish = async (req, res) => {
-  try {
-    const { categoryId } = req.params;
-    const newDish = req.body; // Provide data for the new dish
-
-    const category = await Menu.findById(categoryId);
-    if (!category) {
-      return res.status(404).json({ error: "Category not found" });
-    }
-
-    category.dishes.push(newDish);
-    await category.save();
-
     res
       .status(201)
-      .json({ message: "Dish added to category successfully.", category });
+      .json({ message: "Gallery image created", data: newGalleryImage });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
-// Update the details of a specific dish in a category
-const updateDish = async (req, res) => {
+// Get all gallery images
+const getAllGalleryImages = async (req, res) => {
   try {
-    const { categoryId, dishId } = req.params;
-    const updatedDishData = req.body;
-
-    const category = await Menu.findById(categoryId);
-    if (!category) {
-      return res.status(404).json({ error: "Category not found" });
-    }
-
-    const dishToUpdate = category.dishes.id(dishId);
-    if (!dishToUpdate) {
-      return res.status(404).json({ error: "Dish not found in the category" });
-    }
-
-    dishToUpdate.set(updatedDishData);
-    await category.save();
-
-    res.json({ message: "Dish updated successfully.", dish: dishToUpdate });
+    const galleryImages = await MenuImages.find();
+    res.status(200).json(galleryImages);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
 
-// Delete a specific dish in a category
-const deleteDish = async (req, res) => {
+// Delete a gallery image by ID
+const deleteGalleryImageById = async (req, res) => {
   try {
-    const { categoryId, dishId } = req.params;
-
-    const category = await Menu.findById(categoryId);
-    if (!category) {
-      return res.status(404).json({ error: "Category not found" });
+    const { id } = req.params;
+    const deletedGalleryImage = await MenuImages.findByIdAndDelete(id);
+    if (!deletedGalleryImage) {
+      return res.status(404).json({ message: "Gallery image not found" });
     }
-
-    // Find the index of the dish to delete
-    const dishIndex = category.dishes.findIndex(
-      (dish) => dish._id.toString() === dishId
-    );
-
-    if (dishIndex === -1) {
-      return res.status(404).json({ error: "Dish not found in the category" });
-    }
-
-    // Remove the dish from the array
-    category.dishes.splice(dishIndex, 1);
-
-    await category.save();
-
-    res.json({ message: "Dish deleted successfully." });
+    res
+      .status(200)
+      .json({ message: "Gallery image deleted", data: deletedGalleryImage });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal Server Error" });
@@ -167,11 +47,7 @@ const deleteDish = async (req, res) => {
 };
 
 module.exports = {
-  createCategory,
-  getAllCategories,
-  updateCategory,
-  deleteCategory,
-  addDish,
-  updateDish,
-  deleteDish,
+  createGalleryImage,
+  getAllGalleryImages,
+  deleteGalleryImageById,
 };
