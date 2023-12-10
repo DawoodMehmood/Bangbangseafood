@@ -17,7 +17,8 @@ const Menu = () => {
     try {
       const response = await fetch(`${BACKEND_URL}/api/menu/getAllImages`);
       const data = await response.json();
-      setImages(data);
+      const sortedImages = data.sort((a, b) => a.sequenceNo - b.sequenceNo); // Sort based on sequenceNo
+      setImages(sortedImages);
     } catch (error) {
       console.error("Error fetching images:", error);
     }
