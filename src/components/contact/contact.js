@@ -170,7 +170,7 @@ const Contact = () => {
                   />
                 </Form.Group>
               </Row>
-              <Row className=" message">
+              <Row className=" message"D>
                 <div className="send-button-contact">
                   <Button
                     className="fs-6 mt-3 py-2 px-3"

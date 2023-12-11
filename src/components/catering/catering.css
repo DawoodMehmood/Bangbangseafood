@@ -46,6 +46,7 @@
   /* Adjust the padding as needed */
   border-radius: 10px;
   /* Optional: Add border-radius for rounded corners */
+  width: 50vw;
 }
 
 .box {
@@ -63,4 +64,8 @@
 .form-container textarea:focus {
   outline: none;
   box-shadow: none;
+}
+
+.box .message{
+  width: 100%;
 }

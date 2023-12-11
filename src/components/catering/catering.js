@@ -86,7 +86,7 @@ const Catering = () => {
         <h1 className="fs-1 centered-heading">CATERING</h1>
       </div>
       <div className="box">
-        <Container>
+        <Container >
           <div className="m-4">
             <h3 className="address text-center text-white my-5">
               GET A QUOTE BY FILLING OUT THE FORM AND WE WILL CONTACT YOU
@@ -96,15 +96,15 @@ const Catering = () => {
         </Container>
 
         <Container>
-          <Row className="mx-5">
-            <Col sm={1}></Col>
+          <Row>
+            
 
             <Col sm={10}>
               <Form
                 className="fw-bold ms-3 form-container"
                 onSubmit={handleSubmit}
               >
-                <Row className="mx-4">
+                <Row className="message mx-4">
                   <Col sm={6}>
                     <Form.Group>
                       <Form.Label>First Name</Form.Label>
@@ -133,7 +133,7 @@ const Catering = () => {
                   </Col>
                 </Row>
 
-                <Row className="mt-3 mx-4">
+                <Row className="message mt-3 mx-4">
                   <Col sm={6}>
                     <Form.Group>
                       <Form.Label>Email</Form.Label>
@@ -165,7 +165,7 @@ const Catering = () => {
                   </Col>
                 </Row>
 
-                <Row className="mt-3 mx-4">
+                <Row className="message mt-3 mx-4">
                   <Col sm={6}>
                     <Form.Group>
                       <Form.Label>Number of Persons</Form.Label>
@@ -210,7 +210,7 @@ const Catering = () => {
                   </Col>
                 </Row>
 
-                <Row className="mx-4">
+                <Row className="mx-4 message">
                   <Form.Group className="mt-3">
                     <Form.Label>Message</Form.Label>
                     <Form.Control
@@ -244,6 +244,7 @@ const Catering = () => {
                 </Row>
               </Form>
             </Col>
+            
           </Row>
         </Container>
       </div>
