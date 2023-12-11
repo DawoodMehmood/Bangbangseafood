@@ -23,9 +23,7 @@ const addTextInfiniteLoop = () => {
 
   return (
     <div className="about-container">
-      {/* <img src="https://images.squarespace-cdn.com/content/v1/625f099ac40fcf29fdd7ac58/129ae952-a3f9-447a-80c1-d34e3bad3c1a/R6_D5650.jpg"
-        className='about-with-background'
-      /> */}
+        
 
       <Container>
         <Row>

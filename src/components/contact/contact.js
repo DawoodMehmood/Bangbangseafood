@@ -126,8 +126,8 @@ const Contact = () => {
             </Row>
           </Col>
           <Col sm={7}>
-            <Form className="fw-bold  ms-3" onSubmit={handleSubmit}>
-              <Row>
+            <Form className="contact-us-form fw-bold ms-3" onSubmit={handleSubmit}>
+              <Row className=" message">
                 <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Name</Form.Label>
@@ -155,7 +155,7 @@ const Contact = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row>
+              <Row className=" message">
                 {" "}
                 <Form.Group className="mt-3">
                   <Form.Label>Message</Form.Label>
@@ -170,7 +170,7 @@ const Contact = () => {
                   />
                 </Form.Group>
               </Row>
-              <Row>
+              <Row className=" message">
                 <div className="send-button-contact">
                   <Button
                     className="fs-6 mt-3 py-2 px-3"
@@ -187,7 +187,7 @@ const Contact = () => {
         </Row>
       </Container>
 
-      <Container>
+      <div>
         <div className="maps m-5">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.2879766564865!2d-80.12141002587067!3d26.735184876753397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d92a1fc0c4a003%3A0x757b0935f9dc4372!2s3897%20N%20Haverhill%20Rd%2C%20West%20Palm%20Beach%2C%20FL%2033417%2C%20USA!5e0!3m2!1sen!2s!4v1698602582887!5m2!1sen!2s"
@@ -198,7 +198,7 @@ const Contact = () => {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-      </Container>
+      </div>
       <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
           Bang Bang Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
