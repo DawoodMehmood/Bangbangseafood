@@ -286,3 +286,7 @@ body{
   flex-direction: row;
   justify-content: end;
 }
+
+.footer .message{
+  width: 100%;
+}

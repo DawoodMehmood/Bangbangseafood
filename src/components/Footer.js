@@ -15,7 +15,7 @@ const Footer = ({contactInfo, bannerText}) => {
     <div>
       <footer className="footer text-dark py-4">
         <Container>
-          <Row>
+          <Row className="message">
             {/* First Column */}
             <Col sm={3} className="footer-buttons">
               <h4>Order Now</h4>
