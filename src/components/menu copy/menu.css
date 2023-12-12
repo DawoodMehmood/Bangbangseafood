@@ -151,3 +151,40 @@ h2{
     padding-left: 0;
     margin-top: 2px;
   }
+
+  /* Adjustments for Mobile View */
+ /* Existing styles... */
+
+/* Adjustments for Mobile View */
+@media (max-width: 768px) {
+  .menu-img {
+    width: 100%;
+    margin: 0;
+  }
+
+  .divider {
+    width: 100%;
+  }
+
+  .no-gutters > [class^="col-"] {
+    margin-top: 0;
+  }
+
+  /* Remove left and right margins for mobile view */
+  .no-gutters.mobile-row,
+  .no-gutters.mobile-row > [class^="col-"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+  
+  /* Apply the 'mobile-row' class to the Row element for mobile view */
+  @media (max-width: 768px) {
+    .mobile-row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
