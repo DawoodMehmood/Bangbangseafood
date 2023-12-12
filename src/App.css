@@ -168,7 +168,7 @@ body{
 /* About.css */
 
 /* Styles for the background container */
-.about-with-background {
+.about-with-background{
   content: '';
  
   top: 0;
@@ -284,7 +284,7 @@ body{
 .links{
   display: flex;
   flex-direction: row;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .footer .message{

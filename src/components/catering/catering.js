@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import InputMask from "react-input-mask";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -16,6 +16,7 @@ const Catering = () => {
     date: "",
   });
   const [capval, setCapval] = useState(null);
+  const mobileInputRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -86,7 +87,7 @@ const Catering = () => {
         <h1 className="fs-1 centered-heading">CATERING</h1>
       </div>
       <div className="box">
-        <Container >
+        <Container>
           <div className="m-4">
             <h3 className="address text-center text-white my-5">
               GET A QUOTE BY FILLING OUT THE FORM AND WE WILL CONTACT YOU
@@ -97,8 +98,6 @@ const Catering = () => {
 
         <Container>
           <Row>
-            
-
             <Col sm={10}>
               <Form
                 className="fw-bold ms-3 form-container"
@@ -159,6 +158,7 @@ const Catering = () => {
                         className="form-control"
                         value={formData.mobile}
                         onChange={handleChange}
+                        ref={mobileInputRef}
                         required
                       />
                     </Form.Group>
@@ -244,7 +244,6 @@ const Catering = () => {
                 </Row>
               </Form>
             </Col>
-            
           </Row>
         </Container>
       </div>

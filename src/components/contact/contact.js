@@ -126,7 +126,10 @@ const Contact = () => {
             </Row>
           </Col>
           <Col sm={7}>
-            <Form className="contact-us-form fw-bold ms-3" onSubmit={handleSubmit}>
+            <Form
+              className="contact-us-form fw-bold ms-3"
+              onSubmit={handleSubmit}
+            >
               <Row className=" message">
                 <Col sm={6}>
                   <Form.Group>
@@ -155,8 +158,7 @@ const Contact = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row className=" message">
-                {" "}
+              <Row className="message">
                 <Form.Group className="mt-3">
                   <Form.Label>Message</Form.Label>
                   <Form.Control
@@ -170,7 +172,7 @@ const Contact = () => {
                   />
                 </Form.Group>
               </Row>
-              <Row className=" message"D>
+              <Row className=" message" D>
                 <div className="send-button-contact">
                   <Button
                     className="fs-6 mt-3 py-2 px-3"

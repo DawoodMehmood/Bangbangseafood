@@ -29,7 +29,7 @@
 
 .send-button-contact {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .contact-us-form .message{
