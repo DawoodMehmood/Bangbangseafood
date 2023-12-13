@@ -100,7 +100,7 @@ const Catering = () => {
           <Row>
             <Col sm={10}>
               <Form
-                className="fw-bold ms-3 form-container"
+                className="fw-bold form-container"
                 onSubmit={handleSubmit}
               >
                 <Row className="message mx-4">

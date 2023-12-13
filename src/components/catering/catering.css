@@ -46,7 +46,13 @@
   /* Adjust the padding as needed */
   border-radius: 10px;
   /* Optional: Add border-radius for rounded corners */
-  width: 50vw;
+  width: 60vw;
+}
+
+@media (max-width: 768px) {
+  .form-container{
+    width: 90vw;
+  }
 }
 
 .box {
