@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import "./contact.css";
+import ReCAPTCHA from "react-google-recaptcha";
 import { showToast } from "../toast";
 import BACKEND_URL from "../../config";
 
 const Contact = () => {
+  const [capval, setCapval] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -82,7 +84,7 @@ const Contact = () => {
           alt="Contact Us Background img"
           loading="lazy"
         />
-        <h1 className="fs-1 centered-heading">CONTACT US</h1>
+        <h1 className="fs-1 centered-heading ">CONTACT US</h1>
       </div>
 
       <Container>
@@ -92,45 +94,45 @@ const Contact = () => {
       </Container>
 
       <Container>
-        <Row className="mx-5">
-          <Col sm={5} className="border-end border-3">
-            <Row>
-              <Col sm={3}>
+        <Row className="contact-address mx-5">
+          <Col sm={5} className="border-end border-3 pe-5">
+            <div className="address-details">
+              <div >
                 <p className="fs-5">
                   <strong>Address: </strong>
                 </p>
-              </Col>
-              <Col sm={9}>
+              </div>
+              <div>
                 <p className="fs-5">{contactInfo.address}</p>
-              </Col>
-            </Row>
-            <Row className="my-2">
-              <Col sm={3}>
+              </div>
+            </div>
+            <div className="address-details my-2">
+              <div >
                 <p className="fs-5">
                   <strong>Phone: </strong>
                 </p>
-              </Col>
-              <Col>
+              </div>
+              <div>
                 <p className="fs-5">{contactInfo.number}</p>
-              </Col>
-            </Row>
-            <Row className="mt-2">
-              <Col sm={3}>
+              </div>
+            </div>
+            <div className="address-details mt-2">
+              <div>
                 <p className="fs-5">
                   <strong>Email: </strong>
                 </p>
-              </Col>
-              <Col sm={9}>
+              </div>
+              <div >
                 <p className="fs-5 ">{contactInfo.email}</p>
-              </Col>
-            </Row>
+              </div>
+            </div>
           </Col>
           <Col sm={7}>
             <Form
               className="contact-us-form fw-bold ms-3"
               onSubmit={handleSubmit}
             >
-              <Row className=" message">
+              <Row className="message">
                 <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Name</Form.Label>
@@ -172,13 +174,19 @@ const Contact = () => {
                   />
                 </Form.Group>
               </Row>
+              <Row className="recaptche mt-4">
+                <ReCAPTCHA
+                  sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
+                  onChange={(e) => setCapval(e)}
+                />
+              </Row>
               <Row className=" message" D>
                 <div className="send-button-contact">
                   <Button
                     className="fs-6 mt-3 py-2 px-3"
                     variant="dark"
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || capval === null}
                   >
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
