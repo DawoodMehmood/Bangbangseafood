@@ -147,7 +147,7 @@ body {
   background-position: center;
   /* Ensures the background stays fixed when scrolling */
   opacity: 1; /* Set opacity to full */
-  filter: brightness(0.5) ; /* Adjust brightness (0.7 reduces it) */
+  filter: brightness(0.5); /* Adjust brightness (0.7 reduces it) */
   color: white;
 }
 
@@ -179,19 +179,18 @@ body {
   /* Set the height to cover the viewport height */
   z-index: -1; /* Place it behind the main content */
 
-  
   /* Set opacity to full */
   filter: brightness(0.7); /* Adjust brightness (0.7 reduces it) */
 }
 
 /* Styles for the introductory text */
 .about-text {
-  padding: 20px;
+  padding: 30px;
   font-size: 1.2em;
   color: #dadada;
 }
 
-.about-us-section{
+.about-us-section {
   width: 100%;
 }
 .about-us-section .row1 {
@@ -201,28 +200,26 @@ body {
   align-items: center;
 }
 
-.about-us-section .row1 .col1{
+.about-us-section .row1 .col1 {
   width: 50%;
-
 }
 
-.about-us-section .row1 div .about-image-2{
+.about-us-section .row1 div .about-image-2 {
   width: 90%;
-  
 }
 
-.owner-card{
-display: flex;
-flex-direction: column;
-gap: 20px;
-align-items: center;
+.owner-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
-.owner-card  img{
+.owner-card img {
   width: 70%;
 }
 
-.owner-card p{
+.owner-card p {
   font-size: 22px;
   font-weight: 500;
 }
@@ -248,29 +245,26 @@ align-items: center;
     width: 70%; /* Adjust the width of the image on mobile */
   }
 
-  
-
-  
+  .about-text {
+    font-size: 20px;
+  }
 
   .about-us-section .row1 .imga {
     order: 2; /* Set the order of the image to 2 on mobile */
   }
 
-  .about-us-section .row1 .txt  {
+  .about-us-section .row1 .txt {
     order: 1; /* Set the order of the text to 1 on mobile */
   }
 
-  .centered-image-container img{
+  .centered-image-container img {
     width: 60%;
   }
 
-  .centered-content h2{
+  .centered-content h2 {
     font-size: 40px;
   }
 }
-
-
-
 
 .about-container {
   background-color: #222222;
@@ -288,7 +282,6 @@ align-items: center;
   height: auto;
   max-height: 80vh;
 }
-
 
 /* Styles for the "About Us" section */
 .centered-content {
@@ -355,5 +348,3 @@ align-items: center;
 .footer .message {
   width: 100%;
 }
-
-
