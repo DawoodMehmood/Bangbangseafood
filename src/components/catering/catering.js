@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import InputMask from "react-input-mask";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./catering.css";
+import "./../contact/contact.css"
 import { showToast } from "../toast";
 import BACKEND_URL from "../../config";
 
@@ -78,7 +79,7 @@ const Catering = () => {
 
   return (
     <div>
-      <div className="catering-image">
+      <div className="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
           alt="catering img"

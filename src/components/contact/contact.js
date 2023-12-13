@@ -84,7 +84,7 @@ const Contact = () => {
           alt="Contact Us Background img"
           loading="lazy"
         />
-        <h1 className="fs-1 centered-heading ">CONTACT US</h1>
+        <h1 className="fs-1 centered-heading">CONTACT US</h1>
       </div>
 
       <Container>
