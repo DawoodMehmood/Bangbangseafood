@@ -1,12 +1,15 @@
 // ... Other imports ...
 
-import React, { useState, useEffect } from "react";
-import { Card, Container, Row, Col, Button } from "react-bootstrap";
+import React from "react";
+import {  Container, Row, Col, Button } from "react-bootstrap";
 import logo from "./../../img/logo.png";
 
 import "./pre-order.css";
 
 const PreOrder = () => {
+  const handleButtonClick = () => {
+    window.open("https://www.clover.com/online-ordering/bang-bang-seafood-west-palm-beach", "_blank");
+  };
   return (
     <div>
       <div className="contact-image">
@@ -25,7 +28,7 @@ const PreOrder = () => {
               Contact us at 561-847-4078 to place your pre-order
               <br /> or by clicking the button below.
             </p>
-            <Button className="p-3 mt-3" variant="warning">
+            <Button className="p-3 mt-3" variant="warning" onClick={handleButtonClick}>
               PLACE YOUR PRE-ORDERS HERE
             </Button>
           </div>

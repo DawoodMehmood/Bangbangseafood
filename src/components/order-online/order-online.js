@@ -1,11 +1,14 @@
 // ... Other imports ...
 
-import React, { useState, useEffect } from "react";
-import { Card, Container, Row, Button } from "react-bootstrap";
+import React from "react";
+import {  Container, Row, Button } from "react-bootstrap";
 import "./../contact/contact.css";
 import "./order-online.css";
 
 const Menu = () => {
+  const handleButtonClick = () => {
+    window.open("https://www.clover.com/online-ordering/bang-bang-seafood-west-palm-beach", "_blank");
+  };
   return (
     <div>
       <div className="contact-image">
@@ -24,7 +27,7 @@ const Menu = () => {
               Contact us at 561-847-4078 to place your online pick-up order
               <br /> or by clicking the button below.
             </p>
-            <Button className="p-3 mt-3" variant="warning">
+            <Button className="p-3 mt-3" variant="warning" onClick={handleButtonClick}>
               PLACE YOUR PICK-UP ORDERS HERE
             </Button>
           </div>
