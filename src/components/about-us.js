@@ -23,14 +23,14 @@ const AboutUs = () => {
       <div className="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="Contact Us Background img"
+          alt="header img"
           loading="lazy"
         />
         <h1 className="fs-1 centered-heading">ABOUT US</h1>
       </div>
 
       <div className="centered-image-container">
-        <img src={image} alt="logo image" loading="lazy" />
+        <img src={image} alt="logo" loading="lazy" />
       </div>
 
       <div className="centered-content">
@@ -58,15 +58,13 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="owner-card col1">
-          
-              <img
-                src="https://as1.ftcdn.net/v2/jpg/02/68/22/20/1000_F_268222004_kdPmrr5Mg4yrh3kq4Rhway1zNMHUX6d7.jpg"
-                alt="side image 1"
-                loading="lazy"
-              />
+            <img
+              src="https://as1.ftcdn.net/v2/jpg/02/68/22/20/1000_F_268222004_kdPmrr5Mg4yrh3kq4Rhway1zNMHUX6d7.jpg"
+              alt="side img 1"
+              loading="lazy"
+            />
 
-
-            <p className="text-light">Chef AMNA. A</p>
+            <p className="text-light">Head Chef Amna Aziz</p>
           </div>
         </div>
         <div className="row1">
@@ -74,7 +72,7 @@ const AboutUs = () => {
             <img
               className="about-image-2"
               src="https://as1.ftcdn.net/v2/jpg/00/78/29/06/1000_F_78290623_jxPQwZoKVz8Y7hCtCp8PfjlWfLmfptpP.jpg"
-              alt="side image 2"
+              alt="side img 2"
               loading="lazy"
             />
           </div>
