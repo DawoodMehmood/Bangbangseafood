@@ -2,9 +2,7 @@
 
 const Contact = require("../models/contactModel");
 const Credential = require("../models/credentialModel");
-const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
-dotenv.config();
 
 const createOrUpdateContact = async (req, res) => {
   try {
