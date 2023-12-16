@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import logoimage from "../img/logo.png";
+import BACKEND_URL from "../config";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const Home = () => {
 
   useEffect(() => {
     // Fetch contact information from the API
-    fetch("http://localhost:5000/api/contact/getcontact")
+    fetch(`${BACKEND_URL}/api/contact/getcontact`)
       .then((response) => response.json())
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));

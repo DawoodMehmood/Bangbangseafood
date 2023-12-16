@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import Footer from "../components/Footer";
 import { useLocation } from "react-router-dom";
+import BACKEND_URL from "../config";
 
 const MainLayout = ({ children }) => {
   const location = useLocation();
@@ -27,13 +28,13 @@ const MainLayout = ({ children }) => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/banner/getBanner")
+    fetch(`${BACKEND_URL}/api/banner/getBanner`)
       .then((response) => response.json())
       .then((data) => setBannerText(data))
       .catch((error) => console.error("Error fetching banner text:", error));
 
     // Fetch contact information from the API
-    fetch("http://localhost:5000/api/contact/getcontact")
+    fetch(`${BACKEND_URL}/api/contact/getcontact`)
       .then((response) => response.json())
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));

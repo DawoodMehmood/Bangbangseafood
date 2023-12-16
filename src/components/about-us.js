@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import image from "./../img/logo.png";
+import backgroundImage from "./../img/background-image.jpg"
 
 const AboutUs = () => {
   const scrollingTextRef = useRef();
@@ -22,7 +22,7 @@ const AboutUs = () => {
     <div className="about-container">
       <div className="contact-image">
         <img
-          src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
+          src={backgroundImage}
           alt="header img"
           loading="lazy"
         />

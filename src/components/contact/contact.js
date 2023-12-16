@@ -4,6 +4,7 @@ import "./contact.css";
 import ReCAPTCHA from "react-google-recaptcha";
 import { showToast } from "../toast";
 import BACKEND_URL from "../../config";
+import backgroundImage from "./../../img/background-image.jpg";
 
 const Contact = () => {
   const [capval, setCapval] = useState(null);
@@ -80,7 +81,7 @@ const Contact = () => {
     <div>
       <div className="contact-image">
         <img
-          src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
+          src={backgroundImage}
           alt="header img"
           loading="lazy"
         />

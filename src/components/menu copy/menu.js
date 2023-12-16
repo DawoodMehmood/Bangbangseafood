@@ -5,9 +5,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import "./../contact/contact.css";
 import "./menu.css";
 import BACKEND_URL from "../../config";
+import backgroundImage from "./../../img/background-image.jpg"
 
 const MenuCopy = () => {
-  const [menuImg, setMenuImg] = useState();
+  const [menuImg, setMenuImg] = useState([]);
 
   useEffect(() => {
     // Fetch contact information from the API
@@ -23,7 +24,7 @@ const MenuCopy = () => {
       {console.log(menuImg)}
       <div className="contact-image">
         <img
-          src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
+          src={backgroundImage}
           alt="header img"
           loading="lazy"
         />
@@ -32,76 +33,28 @@ const MenuCopy = () => {
 
       <Container className="container-fluid" fluid>
         <Row className="no-gutters mobile-row mx-5">
-          <Col sm={12}>
-            <div className="menuimage">
-              {menuImg && (
-                <img
-                  className="menu-img"
-                  src={menuImg[0].image}
-                  alt="menu img"
-                  loading="lazy"
-                />
-              )}
-            </div>
-          </Col>
+        {menuImg.map((menu, index) => (
+            <React.Fragment key={index}>
+              <Col sm={12}>
+                <div className="menuimage">
+                  {menu && (
+                    <img
+                      className="menu-img"
+                      src={menu.image}
+                      alt={`menu img ${index}`}
+                      loading="lazy"
+                    />
+                  )}
+                </div>
+              </Col>
 
-          <Col sm={12}>
-            <div className="menuimage">
-              <div className="divider"></div>
-            </div>
-          </Col>
-
-          <Col sm={12}>
-            <div className="menuimage">
-              {menuImg && (
-                <img
-                  className="menu-img"
-                  src={menuImg[1].image}
-                  alt="menu img"
-                  loading="lazy"
-                />
-              )}
-            </div>
-          </Col>
-          <Col sm={12}>
-            <div className="menuimage">
-              <div className="divider"></div>
-            </div>
-          </Col>
-        </Row>
-
-        <Row className="pb-1 no-gutters mobile-row mx-5">
-          <Col sm={12}>
-            <div className="menuimage">
-              {menuImg && (
-                <img
-                  className="menu-img"
-                  src={menuImg[2].image}
-                  alt="menu img"
-                  loading="lazy"
-                />
-              )}
-            </div>
-          </Col>
-
-          <Col sm={12}>
-            <div className="menuimage">
-              <div className="divider"></div>
-            </div>
-          </Col>
-
-          <Col sm={12}>
-            <div className="menuimage">
-              {menuImg && (
-                <img
-                  className="menu-img"
-                  src={menuImg[3].image}
-                  alt="menu img"
-                  loading="lazy"
-                />
-              )}
-            </div>
-          </Col>
+              <Col sm={12}>
+                <div className="menuimage">
+                  <div className="divider"></div>
+                </div>
+              </Col>
+            </React.Fragment>
+          ))}
         </Row>
       </Container>
     </div>
