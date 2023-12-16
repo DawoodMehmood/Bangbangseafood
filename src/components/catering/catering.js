@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import InputMask from "react-input-mask";
 import ReCAPTCHA from "react-google-recaptcha";
 import "./catering.css";
-import "./../contact/contact.css"
+import "./../contact/contact.css";
 import { showToast } from "../toast";
 import BACKEND_URL from "../../config";
 
@@ -82,7 +82,7 @@ const Catering = () => {
       <div className="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="catering img"
+          alt="header img"
           loading="lazy"
         />
         <h1 className="fs-1 centered-heading">CATERING</h1>
@@ -100,10 +100,7 @@ const Catering = () => {
         <Container>
           <Row>
             <Col sm={10}>
-              <Form
-                className="fw-bold form-container"
-                onSubmit={handleSubmit}
-              >
+              <Form className="fw-bold form-container" onSubmit={handleSubmit}>
                 <Row className="message mx-4">
                   <Col sm={6}>
                     <Form.Group>

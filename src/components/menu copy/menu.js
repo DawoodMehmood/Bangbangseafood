@@ -28,7 +28,7 @@ const MenuCopy = () => {
       <div className="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="Contact Us img"
+          alt="header img"
           loading="lazy"
         />
         <h1 className="fs-1 centered-heading">MENU</h1>
@@ -42,7 +42,7 @@ const MenuCopy = () => {
                 <img
                   className="menu-img"
                   src={menuImg[0].image}
-                  alt="Soul Bowl"
+                  alt="menu img"
                   loading="lazy"
                 />
               )}
@@ -61,7 +61,7 @@ const MenuCopy = () => {
                 <img
                   className="menu-img"
                   src={menuImg[1].image}
-                  alt="Wings & Po Boy's"
+                  alt="menu img"
                   loading="lazy"
                 />
               )}
@@ -79,11 +79,11 @@ const MenuCopy = () => {
             <div className="menuimage">
               {menuImg && (
                 <img
-                className="menu-img"
-                src={menuImg[2].image}
-                alt="Crab Boils"
-                loading="lazy"
-              />
+                  className="menu-img"
+                  src={menuImg[2].image}
+                  alt="menu img"
+                  loading="lazy"
+                />
               )}
             </div>
           </Col>
@@ -98,13 +98,12 @@ const MenuCopy = () => {
             <div className="menuimage">
               {menuImg && (
                 <img
-                className="menu-img"
-                src={menuImg[3].image}
-                alt="Pastas"
-                loading="lazy"
-              />
+                  className="menu-img"
+                  src={menuImg[3].image}
+                  alt="menu img"
+                  loading="lazy"
+                />
               )}
-              
             </div>
           </Col>
         </Row>

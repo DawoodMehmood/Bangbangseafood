@@ -81,7 +81,7 @@ const Contact = () => {
       <div className="contact-image">
         <img
           src="https://as1.ftcdn.net/v2/jpg/01/07/76/96/1000_F_107769633_FrmulZCjEzdZ46f5LGbx26JmSuXdCILH.jpg"
-          alt="Contact Us Background img"
+          alt="header img"
           loading="lazy"
         />
         <h1 className="fs-1 centered-heading">CONTACT US</h1>
@@ -97,7 +97,7 @@ const Contact = () => {
         <Row className="contact-address mx-5">
           <Col sm={5} className="border-end border-3 pe-5">
             <div className="address-details">
-              <div >
+              <div>
                 <p className="fs-5">
                   <strong>Address: </strong>
                 </p>
@@ -107,7 +107,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="address-details my-2">
-              <div >
+              <div>
                 <p className="fs-5">
                   <strong>Phone: </strong>
                 </p>
@@ -122,7 +122,7 @@ const Contact = () => {
                   <strong>Email: </strong>
                 </p>
               </div>
-              <div >
+              <div>
                 <p className="fs-5 ">{contactInfo.email}</p>
               </div>
             </div>
