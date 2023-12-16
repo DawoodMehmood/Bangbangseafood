@@ -5,10 +5,11 @@ const {
   createOrUpdateBanner,
   getBanner,
 } = require("../controllers/bannerController");
+const middleware = require("../middleware/jwtMiddleware");
 
 const bannerRouter = express.Router();
 
-bannerRouter.post("/saveBanner", createOrUpdateBanner);
+bannerRouter.post("/saveBanner", middleware, createOrUpdateBanner);
 
 bannerRouter.get("/getBanner", getBanner);
 

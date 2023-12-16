@@ -5,11 +5,11 @@ const {
   getAllGalleryImages,
   deleteGalleryImageById,
 } = require("../controllers/menuController");
-
+const middleware = require("../middleware/jwtMiddleware");
 const menuRouter = express.Router();
 
-menuRouter.post("/newImage", createGalleryImage);
+menuRouter.post("/newImage", middleware, createGalleryImage);
 menuRouter.get("/getAllImages", getAllGalleryImages);
-menuRouter.delete("/deleteImage/:id", deleteGalleryImageById);
+menuRouter.delete("/deleteImage/:id", middleware, deleteGalleryImageById);
 
 module.exports = menuRouter;
