@@ -4,10 +4,6 @@ import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./../contact/contact.css";
 import "./menu.css";
-import SoulBowl from "./../../img/Soul Bowl.png";
-import Wings from "./../../img/Wings & Po Boy's.png";
-import Shrimps from "./../../img/Crab Boils.png";
-import Pastas from "./../../img/Pastas.png";
 import BACKEND_URL from "../../config";
 
 const MenuCopy = () => {
