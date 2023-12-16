@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const adminSchema = new mongoose.Schema({
   username: {
@@ -12,6 +13,11 @@ const adminSchema = new mongoose.Schema({
   },
 });
 
-const Admin = mongoose.model('admin', adminSchema);
+adminSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 12);
+  }
+  next();
+});
 
-module.exports = Admin;
+module.exports = mongoose.model("admin", adminSchema);
