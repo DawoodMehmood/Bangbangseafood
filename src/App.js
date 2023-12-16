@@ -1,18 +1,18 @@
-import React from 'react';
-import { Route, Routes, useLocation, Navigate } from 'react-router-dom';
-import Home from './components/homepage';
-import Contact from './components/contact/contact';
-import AboutUs from './components/about-us';
-import Menu from './components/order-online/order-online';
-import MenuCopy from './components/menu copy/menu';
-import Catering from './components/catering/catering';
-import ComingSoon from './components/coming-soon';
-import PreOrder from './components/pre-order/pre-order';
-import Login from './components/admin/login/login';
-import AdminLayout from './layouts/adminLayout';
-import MainLayout from './layouts/mainLayout';
-import AdminHome from './components/admin/main/adminHome';
-import './App.css';
+import React from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Home from "./components/homepage";
+import Contact from "./components/contact/contact";
+import AboutUs from "./components/about-us";
+import Menu from "./components/order-online/order-online";
+import MenuCopy from "./components/menu copy/menu";
+import Catering from "./components/catering/catering";
+import ComingSoon from "./components/coming-soon";
+import PreOrder from "./components/pre-order/pre-order";
+import Login from "./components/admin/login/login";
+import AdminLayout from "./layouts/adminLayout";
+import MainLayout from "./layouts/mainLayout";
+import AdminHome from "./components/admin/main/adminHome";
+import "./App.css";
 
 function App() {
   return (
@@ -22,13 +22,12 @@ function App() {
         path="/bangbangseafood/controlUddaycontrol/controlpanel/*"
         element={
           <>
-          <AdminLayout>
-            <Routes>
-              <Route path="/" element={<Login />} />
-              <Route path="/adminhome" element={<AdminHome />} />
-            </Routes>
-            
-          </AdminLayout>
+            <AdminLayout>
+              <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/adminhome" element={<AdminHome />} />
+              </Routes>
+            </AdminLayout>
           </>
         }
       />
