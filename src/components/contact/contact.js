@@ -218,7 +218,8 @@ const Contact = () => {
           Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
           Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
           Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood.
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
     </div>

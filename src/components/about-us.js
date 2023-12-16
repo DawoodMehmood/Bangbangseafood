@@ -3,21 +3,6 @@ import image from "./../img/logo.png";
 import backgroundImage from "./../img/background-image.jpg"
 
 const AboutUs = () => {
-  const scrollingTextRef = useRef();
-  const addTextInfiniteLoop = () => {
-    const scrollingText = scrollingTextRef.current;
-    if (scrollingText) {
-      const textContent = scrollingText.textContent;
-      scrollingText.innerHTML = textContent + textContent;
-      // Set a delay and call the function recursively
-      setTimeout(addTextInfiniteLoop, 1000); // Add text every 1000 milliseconds (1 second)
-    }
-  };
-
-  useEffect(() => {
-    addTextInfiniteLoop(); // Start the infinite loop when the component mounts
-  }, []);
-
   return (
     <div className="about-container">
       <div className="contact-image">
@@ -104,8 +89,14 @@ const AboutUs = () => {
 
       <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
-          Bang Bang Seafood. Bang Bang Seafood.Bang Bang Seafood. Bang Bang
-          Seafood.
+          Bang Bang Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
+          Seafood&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
     </div>
