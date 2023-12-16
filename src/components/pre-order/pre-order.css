@@ -1,19 +1,25 @@
-.pre-order p{
-    color: white;
-    font-size: 22px;
+.pre-order p {
+  color: white;
+  font-size: 22px;
 }
 
-.pre-order Button{
-    font-size: 20px;
+.pre-order Button {
+  font-size: 20px;
 }
 
 /* Adjustments for Mobile View */
 @media (max-width: 768px) {
-    .pre-order p {
-      font-size: 18px !important; /* Adjust the font size for the paragraph on mobile */
-    }
-  
-    .pre-order Button {
-      font-size: 16px !important; /* Adjust the font size for the button on mobile */
-    }
+  .pre-order p {
+    font-size: 18px !important;
+    /* Adjust the font size for the paragraph on mobile */
   }
+
+  .pre-order Button {
+    font-size: 16px !important;
+    /* Adjust the font size for the button on mobile */
+  }
+}
+
+.marginTopBelow {
+  margin: 20vh 0;
+}
