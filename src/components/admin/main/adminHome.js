@@ -5,9 +5,13 @@ import BannerTextLinks from "./adminComponents/banner";
 import ContactInfo from "./adminComponents/contact";
 import Menu from "./adminComponents/menu";
 import EmailKey from "./adminComponents/email";
+import ChangePassword from "./adminComponents/changePassword";
 import Default from "./adminComponents/default";
+import { useNavigate } from "react-router-dom";
+import { showToast } from "../../toast";
 
 const AdminHome = () => {
+  const navigate = useNavigate();
   const [activeComponent, setActiveComponent] = useState("");
 
   const renderComponent = () => {
@@ -20,6 +24,8 @@ const AdminHome = () => {
         return <Menu />;
       case "Email":
         return <EmailKey />;
+      case "Password":
+        return <ChangePassword />;
       default:
         return <Default />;
     }
@@ -40,6 +46,12 @@ const AdminHome = () => {
     }
   }, []);
 
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    showToast("Logged Out Successfully", "success");
+    navigate("/bangbangseafood/controlUddaycontrol/controlpanel");
+  };
+
   return (
     <div>
       <div className="navbar">
@@ -50,12 +62,15 @@ const AdminHome = () => {
           height="100"
         />
         <h1>Admin Panel</h1>
-        <button>Logout</button>
+        <button onClick={handleLogout}>Logout</button>
       </div>
 
       <div className="body">
         <div>
           <ul className="left-side">
+            <li onClick={() => setActiveComponent("Password")}>
+              Change Password
+            </li>
             <li onClick={() => setActiveComponent("Banner")}>
               Banner Text & Links
             </li>
