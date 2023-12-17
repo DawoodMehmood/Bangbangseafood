@@ -75,6 +75,34 @@ input[type=number] {
     color: #EE4266;
 }
 
+.cloverColor {
+    color: #36b30c;
+}
+
+.grubhubColor {
+    color: orange;
+}
+
+.doordashColor {
+    color: #ff4f2b;
+}
+
+.ubereatsColor {
+    color: #06c167;
+}
+
+.postmateColor {
+    color: #f3cf00;
+}
+
+.textBold {
+    font-weight: 700;
+}
+
+.textLarge {
+    font-size: large;
+}
+
 .bannerLine {
     text-align: center;
     background-color: red;
