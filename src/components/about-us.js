@@ -1,16 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import image from "./../img/logo.png";
-import backgroundImage from "./../img/background-image.jpg"
+import backgroundImage from "./../img/background-image.jpg";
 
 const AboutUs = () => {
   return (
     <div className="about-container">
       <div className="contact-image">
-        <img
-          src={backgroundImage}
-          alt="header img"
-          loading="lazy"
-        />
+        <img src={backgroundImage} alt="header img" loading="lazy" />
         <h1 className="fs-1 centered-heading">ABOUT US</h1>
       </div>
 
