@@ -1,14 +1,21 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Button } from "react-bootstrap";
 import "./pre-order.css";
 import BACKEND_URL from "../../config";
-import backgroundImage from "./../../img/background-image.jpg"
+import backgroundImage from "./../../img/background-image.jpg";
 
 const PreOrder = () => {
   const [contactInfo, setContactInfo] = useState({
     address: "",
     email: "",
     number: "",
+  });
+  const [links, setLinks] = useState({
+    clover: "",
+    doordash: "",
+    ubereats: "",
+    grubhub: "",
+    postmate: "",
   });
 
   useEffect(() => {
@@ -17,16 +24,17 @@ const PreOrder = () => {
       .then((response) => response.json())
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));
+
+    fetch(`${BACKEND_URL}/api/links/getLinks`)
+      .then((response) => response.json())
+      .then((data) => setLinks(data))
+      .catch((error) => console.error("Error fetching links:", error));
   }, []);
 
   return (
     <div>
       <div className="contact-image">
-        <img
-          src={backgroundImage}
-          loading="lazy"
-          alt="header img"
-        />
+        <img src={backgroundImage} loading="lazy" alt="header img" />
         <h1 className="fs-1 centered-heading">PRE ORDER</h1>
       </div>
 
@@ -37,7 +45,7 @@ const PreOrder = () => {
               Contact us at {contactInfo.number} to place your pre-order
               <br /> or by clicking the button below &darr;
             </p>
-            <a href="https://www.clover.com/online-ordering/bang-bang-seafood-west-palm-beach">
+            <a href={links.clover || "#"}>
               <Button className="p-2 mt-3" variant="warning">
                 PLACE YOUR ORDER HERE
               </Button>

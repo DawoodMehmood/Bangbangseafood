@@ -11,6 +11,13 @@ const Menu = () => {
     email: "",
     number: "",
   });
+  const [links, setLinks] = useState({
+    clover: "",
+    doordash: "",
+    ubereats: "",
+    grubhub: "",
+    postmate: "",
+  });
 
   useEffect(() => {
     // Fetch contact information from the API
@@ -18,15 +25,16 @@ const Menu = () => {
       .then((response) => response.json())
       .then((data) => setContactInfo(data))
       .catch((error) => console.error("Error fetching contact info:", error));
+
+    fetch(`${BACKEND_URL}/api/links/getLinks`)
+      .then((response) => response.json())
+      .then((data) => setLinks(data))
+      .catch((error) => console.error("Error fetching links:", error));
   }, []);
   return (
     <div>
       <div className="contact-image">
-        <img
-          src={backgroundImage}
-          alt="header img"
-          loading="lazy"
-        />
+        <img src={backgroundImage} alt="header img" loading="lazy" />
         <h1 className="fs-1 centered-heading">ONLINE PICK-UP ORDER</h1>
       </div>
 
@@ -34,10 +42,11 @@ const Menu = () => {
         <Row>
           <div className="pre-order text-center marginTopBelow">
             <p>
-              Contact us at {contactInfo.contact} to place your online pick-up order
+              Contact us at {contactInfo.contact} to place your online pick-up
+              order
               <br /> or by clicking the button below &darr;
             </p>
-            <a href="https://www.clover.com/online-ordering/bang-bang-seafood-west-palm-beach">
+            <a href={links.clover || "#"}>
               <Button className="p-2 mt-3" variant="warning">
                 PLACE YOUR ORDER HERE
               </Button>
