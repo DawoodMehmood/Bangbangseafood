@@ -80,11 +80,7 @@ const Contact = () => {
   return (
     <div>
       <div className="contact-image">
-        <img
-          src={backgroundImage}
-          alt="header img"
-          loading="lazy"
-        />
+        <img src={backgroundImage} alt="header img" loading="lazy" />
         <h1 className="fs-1 centered-heading">CONTACT US</h1>
       </div>
 
