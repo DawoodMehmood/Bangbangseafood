@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
+import BACKEND_URL from "../../../config";
+import { showToast } from "../../toast";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Update the meta tags
@@ -24,7 +28,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/api/login", {
+      const response = await fetch(`${BACKEND_URL}/auth/admin/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,11 +38,13 @@ const Login = () => {
 
       if (response.ok) {
         const { token } = await response.json();
-        localStorage.setItem("token", token);
-        // Redirect or perform necessary action upon successful login
+        sessionStorage.setItem("token", token);
+        showToast("Logged In Successfully", "success");
+        navigate("/bangbangseafood/controlUddaycontrol/controlpanel/adminhome"); // Redirect on successful login
       } else {
         // Handle login failure
-        console.error("Login failed");
+        showToast("Incorrect Username or Password!", "error");
+        console.error("Incorrect Username or Password");
       }
     } catch (error) {
       console.error("Login error:", error);
