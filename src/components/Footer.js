@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { useNavigate } from "react-router-dom";
 
-const Footer = ({contactInfo, bannerText}) => {
+const Footer = ({ contactInfo, bannerText }) => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const handleButtonClick = () => {
@@ -17,7 +17,7 @@ const Footer = ({contactInfo, bannerText}) => {
         <Container>
           <Row className="message">
             {/* First Column */}
-            <Col sm={3} className="footer-buttons">
+            <Col sm={3} className="footer-buttons mb-2">
               <h4>Order Now</h4>
               <Button
                 className="footer-button mb-2"
@@ -40,17 +40,22 @@ const Footer = ({contactInfo, bannerText}) => {
               >
                 Grub Hub
               </Button>
+              <Button
+                className="footer-button mb-2"
+                variant="outline-dark"
+                onClick={handleButtonClick}
+              >
+                PostMates
+              </Button>
             </Col>
             {/* Second Column */}
-            <Col sm={3} className="text-center">
+            <Col sm={3} className="text-center mb-3">
               <h4>Address</h4>
-              <p className="mt-5">
-                {contactInfo.address}
-              </p>
+              <p className="mt-5">{contactInfo.address}</p>
             </Col>
 
             {/* Third Column */}
-            <Col sm={3} className="text-center">
+            <Col sm={3} className="text-center mb-3">
               <h4>Contact Us</h4>
               <p className="mt-5">
                 Phone: {contactInfo.number}
@@ -60,7 +65,7 @@ const Footer = ({contactInfo, bannerText}) => {
             </Col>
 
             {/* Fourth Column */}
-            <Col sm={3} className="text-center">
+            <Col sm={3} className="text-center  mb-3">
               <h4>Follow Us</h4>
               <div className="mt-5">
                 <a
