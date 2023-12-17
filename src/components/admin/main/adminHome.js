@@ -7,6 +7,7 @@ import Menu from "./adminComponents/menu";
 import EmailKey from "./adminComponents/email";
 import ChangePassword from "./adminComponents/changePassword";
 import Default from "./adminComponents/default";
+import Links from "./adminComponents/links";
 import { useNavigate } from "react-router-dom";
 import { showToast } from "../../toast";
 
@@ -26,6 +27,8 @@ const AdminHome = () => {
         return <EmailKey />;
       case "Password":
         return <ChangePassword />;
+      case "Links":
+        return <Links />;
       default:
         return <Default />;
     }
@@ -69,13 +72,18 @@ const AdminHome = () => {
         <div>
           <ul className="left-side">
             <li onClick={() => setActiveComponent("Password")}>
-              Change Password
+              Password Change
             </li>
             <li onClick={() => setActiveComponent("Banner")}>
-              Banner Text & Links
+              Banner Text & <br></br>Social Media Links
             </li>
-            <li onClick={() => setActiveComponent("Contact")}>Contact Info</li>
+            <li onClick={() => setActiveComponent("Contact")}>
+              Contact Info & <br></br>Timings
+            </li>
             <li onClick={() => setActiveComponent("Menu")}>Menu Images</li>
+            <li onClick={() => setActiveComponent("Links")}>
+              Integration Links
+            </li>
             <li onClick={() => setActiveComponent("Email")}>Email & Key</li>
           </ul>
         </div>
