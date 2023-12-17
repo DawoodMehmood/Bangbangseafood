@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import BACKEND_URL from "../../../../config";
 import { showToast } from "../../../toast";
+import { useNavigate } from "react-router-dom";
 
 const EmailKey = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     email: "",
     key: "",
@@ -15,7 +18,13 @@ const EmailKey = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/api/credential/getCredential`)
+    fetch(`${BACKEND_URL}/api/credential/getCredential`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -43,10 +52,18 @@ const EmailKey = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${sessionStorage.getItem("token")}`,
       },
       body: JSON.stringify(formData),
     })
       .then((response) => {
+        if (response.status === 401 || response.status === 400) {
+          // Token is invalid or expired
+          sessionStorage.removeItem("token");
+          showToast("Session Expired. Login Again", "info");
+          navigate("/bangbangseafood/controlUddaycontrol/controlpanel"); // Redirect to login
+          return null;
+        }
         if (!response.ok) {
           showToast("Error Updating Record", "error");
           throw new Error("Network response was not ok");

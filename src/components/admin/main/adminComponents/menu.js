@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import BACKEND_URL from "../../../../config";
 import { showToast } from "../../../toast";
+import { useNavigate } from "react-router-dom";
 
 const Menu = () => {
+  const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const [sequence, setSequence] = useState();
   const [image, setImage] = useState("");
@@ -44,12 +46,20 @@ const Menu = () => {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
         body: JSON.stringify({
           sequenceNo: sequence,
           image: image,
         }),
       }).then((response) => {
+        if (response.status === 401 || response.status === 400) {
+          // Token is invalid or expired
+          sessionStorage.removeItem("token");
+          showToast("Session Expired. Login Again", "info");
+          navigate("/bangbangseafood/controlUddaycontrol/controlpanel"); // Redirect to login
+          return null;
+        }
         if (!response.ok) {
           showToast("Error Updating Record", "error");
           throw new Error("Network response was not ok");
@@ -74,6 +84,13 @@ const Menu = () => {
       await fetch(`${BACKEND_URL}/api/menu/deleteImage/${id}`, {
         method: "DELETE",
       }).then((response) => {
+        if (response.status === 401 || response.status === 400) {
+          // Token is invalid or expired
+          sessionStorage.removeItem("token");
+          showToast("Session Expired. Login Again", "info");
+          navigate("/bangbangseafood/controlUddaycontrol/controlpanel"); // Redirect to login
+          return null;
+        }
         if (!response.ok) {
           showToast("Error Deleting Image", "error");
           throw new Error("Network response was not ok");
