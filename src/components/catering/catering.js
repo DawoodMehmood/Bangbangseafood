@@ -6,7 +6,7 @@ import "./catering.css";
 import "./../contact/contact.css";
 import { showToast } from "../toast";
 import BACKEND_URL from "../../config";
-import backgroundImage from "./../../img/background-image.jpg"
+import backgroundImage from "./../../img/background-image.jpg";
 
 const Catering = () => {
   const [formData, setFormData] = useState({
@@ -81,17 +81,13 @@ const Catering = () => {
   return (
     <div>
       <div className="contact-image">
-        <img
-          src={backgroundImage}
-          alt="header img"
-          loading="lazy"
-        />
+        <img src={backgroundImage} alt="header img" loading="lazy" />
         <h1 className="fs-1 centered-heading">CATERING</h1>
       </div>
       <div className="box">
         <Container>
           <div className="m-4">
-            <h3 className="address text-center text-white my-5">
+            <h3 className="address text-center text-white my-3">
               GET A QUOTE BY FILLING OUT THE FORM AND WE WILL CONTACT YOU
               SHORTLY VIA EMAIL
             </h3>
@@ -247,7 +243,7 @@ const Catering = () => {
         </Container>
       </div>
 
-      <div className="marquee-container mt-5">
+      <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
           Bang Bang Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
           Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
