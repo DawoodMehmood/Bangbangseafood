@@ -56,7 +56,34 @@ const adminSignUp = async (req, res) => {
   }
 };
 
+// Function to change password
+const adminChangePassword = async (req, res) => {
+  const { username, oldPassword, newPassword } = req.body;
+
+  try {
+    const admin = await Admin.findOne({ username });
+    if (!admin) {
+      return res.status(404).json({ message: "Username not found" });
+    }
+
+    const isMatch = await bcrypt.compare(oldPassword, admin.password);
+    if (!isMatch) {
+      return res.status(404).json({ message: "Old password is incorrect" });
+    }
+
+    const hashedNewPassword = await bcrypt.hash(newPassword, 12);
+    admin.password = hashedNewPassword;
+    await admin.save();
+
+    res.json({ message: "Password changed successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 module.exports = {
   adminLogin,
   adminSignUp,
+  adminChangePassword,
 };
