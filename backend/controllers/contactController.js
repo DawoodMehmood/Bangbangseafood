@@ -11,7 +11,7 @@ const createOrUpdateContact = async (req, res) => {
 
     if (!address || !email || !number) {
       return res
-        .status(400)
+        .status(500)
         .json({ error: "Address, email, and number are required." });
     }
 

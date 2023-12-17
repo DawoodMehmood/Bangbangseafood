@@ -8,7 +8,7 @@ const createOrUpdateCredential = async (req, res) => {
     const { email, key } = req.body;
 
     if (!email || !key) {
-      return res.status(400).json({ error: "Credentials are required." });
+      return res.status(500).json({ error: "Credentials are required." });
     }
 
     // Use findOneAndUpdate to update or create a contact
