@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import BACKEND_URL from "../../../../config";
 import { showToast } from "../../../toast";
 import { useNavigate } from "react-router-dom";
+import imageCompression from "browser-image-compression";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -26,13 +27,33 @@ const Menu = () => {
     }
   };
 
-  const handleImageChange = (e) => {
+  const handleImageChange = async (e) => {
+    setIsLoading(true);
     const file = e.target.files[0];
-    var reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onloadend = () => {
-      setImage(reader.result);
-    };
+    if (!file) {
+      return;
+    }
+    console.log("Original File Size:", file.size, "bytes");
+    try {
+      const options = {
+        maxSizeMB: 1, // (optional) Max size of the file in megabytes
+        maxWidthOrHeight: 1920, // (optional) compress the image if its width or height is larger than this value
+        useWebWorker: true, // (optional) Use a web worker for better performance
+      };
+
+      const compressedFile = await imageCompression(file, options);
+      console.log("Compressed File Size:", compressedFile.size, "bytes");
+      var reader = new FileReader();
+      reader.readAsDataURL(compressedFile);
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+    } catch (error) {
+      console.error("Error during image compression:", error);
+      showToast("Error during image compression", "error");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -83,6 +104,10 @@ const Menu = () => {
     try {
       await fetch(`${BACKEND_URL}/api/menu/deleteImage/${id}`, {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
       }).then((response) => {
         if (response.status === 401 || response.status === 400) {
           // Token is invalid or expired
@@ -135,6 +160,7 @@ const Menu = () => {
               autoComplete="off"
               required
               accept="image/*"
+              multiple={false}
               onChange={handleImageChange}
             />
           </div>
@@ -144,7 +170,7 @@ const Menu = () => {
             </div>
           )}
           <button type="submit" disabled={isLoading}>
-            Add Image
+            Upload Image
           </button>
         </form>
       </div>
