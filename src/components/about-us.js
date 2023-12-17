@@ -40,13 +40,9 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="owner-card col1">
-            <img
-              src={chef}
-              alt="side img 1"
-              loading="lazy"
-            />
+            <img src={chef} alt="side img 1" loading="lazy" />
 
-            <p className="text-light">Head Chef Amna Aziz</p>
+            <p className="text-light">Head Chef Amna Abid</p>
           </div>
         </div>
         <div className="row1">
