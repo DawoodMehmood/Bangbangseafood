@@ -7,6 +7,7 @@ const cors = require("cors");
 const contactRoutes = require("./routes/contactRoutes");
 const menuRoutes = require("./routes/menuRoutes");
 const bannerRoutes = require("./routes/bannerRoutes");
+const linksRoutes = require("./routes/linksRoutes");
 const credentialRoutes = require("./routes/credentialRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 const middleware = require("./middleware/jwtMiddleware");
@@ -32,6 +33,7 @@ app.use(express.json());
 app.use("/api/contact", contactRoutes);
 app.use("/api/menu", menuRoutes);
 app.use("/api/banner", bannerRoutes);
+app.use("/api/links", linksRoutes);
 app.use("/api/credential", middleware, credentialRoutes);
 app.use("/auth/admin", adminRoutes);
 app.post("/api/token/validate", middleware, (req, res) => {
