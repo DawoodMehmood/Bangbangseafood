@@ -115,8 +115,8 @@ const BannerComponent = () => {
 
         <h2>Social Media Links</h2>
 
-        <div className="fbColor section">
-          <label>Facebook</label>
+        <div className="section">
+          <label className="fbColor textBold textLarge">Facebook</label>
           <input
             type="text"
             name="fb"
@@ -128,8 +128,8 @@ const BannerComponent = () => {
           />
         </div>
 
-        <div className=" instaColor section">
-          <label>Instagram</label>
+        <div className="section">
+          <label className="instaColor textBold textLarge">Instagram</label>
           <input
             type="text"
             name="insta"
