@@ -4,15 +4,6 @@ const Banner = require("../models/bannerModel");
 
 const createOrUpdateBanner = async (req, res) => {
   try {
-    // Validate the incoming data
-    const { line1, line2, fb, insta } = req.body;
-
-    if (!line1 || !line2 || !fb || !insta) {
-      return res
-        .status(500)
-        .json({ error: "Text lines & links are required." });
-    }
-
     // Use findOneAndUpdate to update or create a contact
     const updatedData = await Banner.findOneAndUpdate({}, req.body, {
       upsert: true,
