@@ -217,6 +217,9 @@ body {
 
 .owner-card img {
   width: 70%;
+  top: 0;
+  object-fit: cover; /* You can choose 'cover', 'contain', 'fill', etc. based on your needs */
+  aspect-ratio: 6/5; /* Set your desired aspect ratio */
 }
 
 .owner-card p {

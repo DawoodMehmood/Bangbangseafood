@@ -1,6 +1,7 @@
 import React from "react";
 import image from "./../img/logo.png";
 import backgroundImage from "./../img/background-image.jpg";
+import chef from "./../img/chef.jpeg";
 
 const AboutUs = () => {
   return (
@@ -40,7 +41,7 @@ const AboutUs = () => {
           </div>
           <div className="owner-card col1">
             <img
-              src="https://as1.ftcdn.net/v2/jpg/02/68/22/20/1000_F_268222004_kdPmrr5Mg4yrh3kq4Rhway1zNMHUX6d7.jpg"
+              src={chef}
               alt="side img 1"
               loading="lazy"
             />

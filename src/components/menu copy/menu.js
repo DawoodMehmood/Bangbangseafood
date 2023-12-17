@@ -14,7 +14,8 @@ const MenuCopy = () => {
     // Fetch contact information from the API
     fetch(`${BACKEND_URL}/api/menu/getAllImages`)
       .then((response) => response.json())
-      .then((data) => setMenuImg(data))
+      .then((data) => data.sort((a, b) => a.sequenceNo - b.sequenceNo))
+      .then((sortedImages) => setMenuImg(sortedImages))
 
       .catch((error) => console.error("Error fetching menu images:", error));
   }, []);
