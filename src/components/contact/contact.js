@@ -93,33 +93,33 @@ const Contact = () => {
       <Container>
         <Row className="contact-address mx-5">
           <Col sm={5} className="border-end border-3 pe-5">
-            <div className="address-details">
-              <div>
+            <div className="address-details row ms-3">
+              <div className="col-md-4">
                 <p className="fs-5">
                   <strong>Address: </strong>
                 </p>
               </div>
-              <div>
+              <div className="col-md-7">
                 <p className="fs-5">{contactInfo.address}</p>
               </div>
             </div>
-            <div className="address-details my-2">
-              <div>
+            <div className="address-details row my-2 ms-3">
+              <div className="col-md-4">
                 <p className="fs-5">
                   <strong>Phone: </strong>
                 </p>
               </div>
-              <div>
+              <div className="col-md-7">
                 <p className="fs-5">{contactInfo.number}</p>
               </div>
             </div>
-            <div className="address-details mt-2">
-              <div>
+            <div className="address-details row mt-2 ms-3">
+              <div className="col-md-4">
                 <p className="fs-5">
                   <strong>Email: </strong>
                 </p>
               </div>
-              <div>
+              <div className="col-md-4">
                 <p className="fs-5 ">{contactInfo.email}</p>
               </div>
             </div>
@@ -175,6 +175,7 @@ const Contact = () => {
                 <ReCAPTCHA
                   sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
                   onChange={(e) => setCapval(e)}
+                  className="contact-recaptche"
                 />
               </Row>
               <Row className=" message" D>

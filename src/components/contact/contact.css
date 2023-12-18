@@ -29,7 +29,7 @@
 
 .send-button-contact {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .contact-us-form .message{
@@ -45,6 +45,7 @@ width: 100%;
   gap:10px
 }
 @media (max-width: 768px){
+  
   .border-end{
     border-right: 0px !important;
   }
@@ -73,8 +74,10 @@ width: 100%;
 }
 
 .recaptcha{
-  
-  width: 100%;
-  
+  margin-right: 0;
+  margin-left: 0;
+}
+.contact-recaptche{
+  scale:0.8;
 }
 }

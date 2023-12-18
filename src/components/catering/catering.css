@@ -5,7 +5,6 @@
   height: 300px;
   /* Set the desired width for the container */
   overflow: hidden;
-
 }
 
 .catering-image img {
@@ -16,7 +15,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   filter: brightness(0.6);
-
 }
 
 .centered-heading {
@@ -31,7 +29,6 @@
   display: flex;
   justify-content: flex-end;
 }
-
 
 .address {
   text-wrap: balance;
@@ -50,8 +47,11 @@
 }
 
 @media (max-width: 768px) {
-  .form-container{
+  .form-container {
     width: 90vw;
+  }
+  .catering-recaptcha {
+    scale: 0.8;
   }
 }
 
@@ -60,10 +60,8 @@
 }
 
 .increase-decrease-button {
-
   border-color: rgb(213, 213, 213);
 }
-
 
 /* Add this to your CSS to remove the blue border on focus */
 .form-container input:focus,
@@ -72,6 +70,10 @@
   box-shadow: none;
 }
 
-.box .message{
+.box .message {
   width: 100%;
+}
+
+.recap {
+  margin-right: 0;
 }

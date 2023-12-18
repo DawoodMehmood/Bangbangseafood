@@ -219,10 +219,11 @@ const Catering = () => {
                     />
                   </Form.Group>
                 </Row>
-                <Row className="mt-4">
+                <Row className="recap mt-4">
                   <ReCAPTCHA
                     sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
                     onChange={(e) => setCapval(e)}
+                    className="catering-recaptcha"
                   />
                 </Row>
                 <Row className="mx-4">
