@@ -33,7 +33,7 @@ const Footer = ({ contactInfo, bannerText }) => {
         <Container>
           <Row className="message">
             {/* First Column */}
-            <Col sm={3} className="footer-buttons mb-2 mt-2">
+            <Col md={3} sm={6} className="footer-buttons mb-2 mt-2">
               <h4>Order Now</h4>
               <a href={links.doordash || "#"}>
                 <Button
@@ -73,13 +73,13 @@ const Footer = ({ contactInfo, bannerText }) => {
               </a>
             </Col>
             {/* Second Column */}
-            <Col sm={3} className="text-center mb-3 mt-2">
+            <Col md={3}  sm={6} className="text-center mb-3 mt-2">
               <h4>Address</h4>
               <p className="mt-5">{contactInfo.address}</p>
             </Col>
 
             {/* Third Column */}
-            <Col sm={3} className="text-center mb-3 mt-2">
+            <Col md={3}  sm={6} className="text-center mb-3 mt-2">
               <h4>Contact Us</h4>
               <p className="mt-5">
                 Phone: {contactInfo.number}
@@ -89,7 +89,7 @@ const Footer = ({ contactInfo, bannerText }) => {
             </Col>
 
             {/* Fourth Column */}
-            <Col sm={3} className="text-center mb-3 mt-2">
+            <Col md={3} sm={6} className="text-center mb-3 mt-2">
               <h4>Follow Us</h4>
               <div className="mt-5">
                 <a
