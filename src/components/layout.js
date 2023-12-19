@@ -5,7 +5,7 @@ import brandImage from "../img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
-const Layout = ({bannerText}) => {
+const Layout = ({ bannerText }) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleToggle = () => {
@@ -26,10 +26,18 @@ const Layout = ({bannerText}) => {
 
       <Navbar expand="lg" className={` px-5 dark-navbar`} variant="dark">
         <Navbar.Brand as={Link} to="/">
-          <img src={brandImage} alt="BangBangSeafood Logo" width="80" height="80" />
+          <img
+            src={brandImage}
+            alt="BangBangSeafood Logo"
+            width="80"
+            height="80"
+          />
         </Navbar.Brand>
         <Navbar.Toggle onClick={handleToggle} />
-        <Navbar.Collapse className="nav-nav-flex" in={expanded}>
+        <Navbar.Collapse
+          className={`nav-nav-flex ${expanded ? "flex-column" : ""}`}
+          in={expanded}
+        >
           <Nav className="nav-flex">
             <Nav.Link
               as={Link}
@@ -82,8 +90,8 @@ const Layout = ({bannerText}) => {
             </Nav.Link>
           </Nav>
 
-          <Nav>
-            <div className="links">
+          <Nav >
+            <div className={`links ${expanded ? "nav-flex" : ""}`}>
               <Nav.Link
                 target="_blank"
                 className="mx-1"
