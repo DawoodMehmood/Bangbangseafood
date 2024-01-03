@@ -90,113 +90,108 @@ const Contact = () => {
         </div>
       </Container>
 
-      
-        <Row className="no-gutter contact-address  ">
-          <Col sm={6} className="border-end border-3 pe-5 mt-4">
-            <div className="address-details row ms-3">
-              <div className="col-md-4">
-                <p className="fs-5">
-                  <strong>Address: </strong>
-                </p>
-              </div>
-              <div className="col-md-7">
-                <p className="fs-5">{contactInfo.address}</p>
-              </div>
+      <Row className="contact-address mx-5">
+        <Col sm={6} className="border-end border-3 pe-5 mt-4">
+          <div className="address-details row ms-3">
+            <div className="col-md-3">
+              <p className="fs-5">
+                <strong>Address: </strong>
+              </p>
             </div>
-            <div className="address-details row my-2 ms-3">
-              <div className="col-md-4">
-                <p className="fs-5">
-                  <strong>Phone: </strong>
-                </p>
-              </div>
-              <div className="col-md-7">
-                <p className="fs-5">{contactInfo.number}</p>
-              </div>
+            <div className="col-md-7">
+              <p className="fs-5">{contactInfo.address}</p>
             </div>
-            <div className="address-details row mt-2 ms-3">
-              <div className="col-md-4">
-                <p className="fs-5">
-                  <strong>Email: </strong>
-                </p>
-              </div>
-              <div className="col-md-7">
-                <p className="fs-5 ">{contactInfo.email}</p>
-              </div>
+          </div>
+          <div className="address-details row my-2 ms-3">
+            <div className="col-md-3">
+              <p className="fs-5">
+                <strong>Phone: </strong>
+              </p>
             </div>
-          </Col>
-          <Col sm={6}>
-            <Form
-              className="contact-us-form fw-bold ms-3"
-              onSubmit={handleSubmit}
-            >
-              <Row className="no-gutter message">
-                <Col sm={6}>
-                  <Form.Group>
-                    <Form.Label>Name</Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="name"
-                      placeholder="Enter your name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </Form.Group>
-                </Col>
-                <Col sm={6}>
-                  <Form.Group>
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="email"
-                      name="email"
-                      placeholder="Enter your email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </Form.Group>
-                </Col>
-              </Row>
-              <Row className="no-gutter message">
-                <Form.Group className="mt-3">
-                  <Form.Label>Message</Form.Label>
+            <div className="col-md-7">
+              <p className="fs-5">{contactInfo.number}</p>
+            </div>
+          </div>
+          <div className="address-details row mt-2 ms-3">
+            <div className="col-md-3">
+              <p className="fs-5">
+                <strong>Email: </strong>
+              </p>
+            </div>
+            <div className="col-md-7">
+              <p className="fs-5 ">{contactInfo.email}</p>
+            </div>
+          </div>
+        </Col>
+        <Col sm={6}>
+          <Form
+            className="contact-us-form fw-bold ms-3"
+            onSubmit={handleSubmit}
+          >
+            <Row className="no-gutter message">
+              <Col sm={6}>
+                <Form.Group>
+                  <Form.Label>Name</Form.Label>
                   <Form.Control
-                    as="textarea"
-                    name="message"
-                    rows={3}
-                    placeholder="Enter your message"
-                    value={formData.message}
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={formData.name}
                     onChange={handleChange}
                     required
                   />
                 </Form.Group>
-              </Row>
-              <div className="recaptche mt-4">
-               
-                <ReCAPTCHA
-                  sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
-                  onChange={(e) => setCapval(e)}
-                  className="contact-recaptche"
+              </Col>
+              <Col sm={6}>
+                <Form.Group>
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row className="no-gutter message">
+              <Form.Group className="mt-3">
+                <Form.Label>Message</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  name="message"
+                  rows={3}
+                  placeholder="Enter your message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                 />
-               
-                
+              </Form.Group>
+            </Row>
+            <div className="recaptche mt-4">
+              <ReCAPTCHA
+                sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
+                onChange={(e) => setCapval(e)}
+                className="contact-recaptche"
+              />
+            </div>
+            <Row className="no-gutter  message" D>
+              <div className="send-button-contact">
+                <Button
+                  className="fs-6 mt-3 py-2 px-3"
+                  variant="dark"
+                  type="submit"
+                  disabled={isSubmitting || capval === null}
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </Button>
               </div>
-              <Row className="no-gutter  message" D>
-                <div className="send-button-contact">
-                  <Button
-                    className="fs-6 mt-3 py-2 px-3"
-                    variant="dark"
-                    type="submit"
-                    disabled={isSubmitting || capval === null}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </div>
-              </Row>
-            </Form>
-          </Col>
-        </Row>
-     
+            </Row>
+          </Form>
+        </Col>
+      </Row>
 
       <div className="container">
         <div className="row-sm maps m-5">
