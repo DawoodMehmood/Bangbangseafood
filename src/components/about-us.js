@@ -15,7 +15,7 @@ const AboutUs = () => {
         <img src={image} alt="logo" loading="lazy" />
       </div>
 
-      <div className="centered-content">
+      <div className="centered-content tagline">
         <h2>Flavor That Goes Bang Bang!</h2>
       </div>
 
@@ -28,21 +28,20 @@ const AboutUs = () => {
               love for exceptional cuisine into every dish we create. Founded by
               a registered nurse turned culinary enthusiast, our journey began
               with a growing interest in the art of cooking and a background
-              dedicated to caring for other’s well-being.
-              <br /> As a registered nurse, I discovered a profound connection
-              between nourishment and healing. This realization sparked my
-              fascination with the culinary world - a realm where flavors,
-              ingredients, and creativity converge to delight the senses and
-              foster togetherness.
-              <br /> Hosting Vibrant Parties and orchestrating unforgettable
-              family gatherings, I’ve always found joy in preparing grand meals
-              that bring people together.
+              dedicated to caring for other’s well-being. As a registered nurse,
+              I discovered a profound connection between nourishment and
+              healing. This realization sparked my fascination with the culinary
+              world - a realm where flavors, ingredients, and creativity
+              converge to delight the senses and foster togetherness. Hosting
+              Vibrant Parties and orchestrating unforgettable family gatherings,
+              I’ve always found joy in preparing grand meals that bring people
+              together.
             </p>
           </div>
           <div className="owner-card col1">
             <img src={chef} alt="side img 1" loading="lazy" />
 
-            <p className="text-light">Head Chef Amna Abid</p>
+            <p className="text-light">Chef A.Abid</p>
           </div>
         </div>
         <div className="row1">
@@ -64,7 +63,7 @@ const AboutUs = () => {
               memorable moments through exceptional food. Our menu is a
               testament to the passion and dedication poured into every recipe,
               ensuring a symphony of flavors that leaves a lasting impression.
-              <br /> Join us on a culinary journey where savory sensations and
+              Join us on a culinary journey where savory sensations and
               heartfelt hospitality converge. Whether it’s a celebration, an
               intimate gathering, or a casual Take Out experience, allow Bang
               Bang Seafood & Grill to elevate your palate and create
@@ -72,9 +71,10 @@ const AboutUs = () => {
               <br />
               Thank you for being a part of our flavorful Story.
               <br />
+              <br></br>
               Sincerely,
               <br />
-              Chef AMNA. A
+              Chef A.Abid
             </p>
           </div>
         </div>
