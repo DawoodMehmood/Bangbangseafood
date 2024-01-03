@@ -136,7 +136,7 @@ const ContactInfo = () => {
         <div className="section">
           <label>Number</label>
           <input
-            type="tel"
+            type="text"
             name="number"
             value={formData.number}
             autoComplete="off"
