@@ -7,7 +7,8 @@
 }
 
 .dark-navbar {
-  background-color: #222222; /* Change this to your desired dark background color */
+  background-color: #222222;
+  /* Change this to your desired dark background color */
   font-size: 20px;
   font-weight: 500;
   display: flex;
@@ -37,63 +38,82 @@
 }
 
 .underline-on-hover-black {
-  text-decoration: none; /* Remove the default underline */
-  position: relative; /* Set the position to relative to make room for the underline */
+  text-decoration: none;
+  /* Remove the default underline */
+  position: relative;
+  /* Set the position to relative to make room for the underline */
 }
 
 .underline-on-hover-black::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px; /* Adjust the thickness of the underline */
-  background-color: #000000; /* Change the color of the underline */
-  bottom: 0; /* Position the underline at the bottom of the link */
+  height: 2px;
+  /* Adjust the thickness of the underline */
+  background-color: #000000;
+  /* Change the color of the underline */
+  bottom: 0;
+  /* Position the underline at the bottom of the link */
   left: 0;
-  transform: scaleX(0); /* Start with zero width (hidden) */
+  transform: scaleX(0);
+  /* Start with zero width (hidden) */
   transform-origin: bottom right;
-  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+  transition: transform 0.2s ease-in-out;
+  /* Add a smooth transition effect */
 }
 
 .underline-on-hover-black:hover::after {
-  transform: scaleX(1); /* Expand the underline to 100% width on hover */
+  transform: scaleX(1);
+  /* Expand the underline to 100% width on hover */
   transform-origin: bottom left;
 }
 
 .underline-on-hover-white {
-  text-decoration: none; /* Remove the default underline */
-  position: relative; /* Set the position to relative to make room for the underline */
+  text-decoration: none;
+  /* Remove the default underline */
+  position: relative;
+  /* Set the position to relative to make room for the underline */
 }
 
 .underline-on-hover-white::after {
   content: "";
   position: absolute;
   width: 100%;
-  height: 2px; /* Adjust the thickness of the underline */
-  background-color: #ffffff; /* Change the color of the underline */
-  bottom: 0; /* Position the underline at the bottom of the link */
+  height: 2px;
+  /* Adjust the thickness of the underline */
+  background-color: #ffffff;
+  /* Change the color of the underline */
+  bottom: 0;
+  /* Position the underline at the bottom of the link */
   left: 0;
-  transform: scaleX(0); /* Start with zero width (hidden) */
+  transform: scaleX(0);
+  /* Start with zero width (hidden) */
   transform-origin: bottom right;
-  transition: transform 0.2s ease-in-out; /* Add a smooth transition effect */
+  transition: transform 0.2s ease-in-out;
+  /* Add a smooth transition effect */
 }
 
 .underline-on-hover-white:hover::after {
-  transform: scaleX(1); /* Expand the underline to 100% width on hover */
+  transform: scaleX(1);
+  /* Expand the underline to 100% width on hover */
   transform-origin: bottom left;
 }
 
 /* App.css */
 .custom-facebook-icon {
-  color: #1877f2; /* Set the custom color for Facebook (e.g., Facebook blue) */
+  color: #1877f2;
+  /* Set the custom color for Facebook (e.g., Facebook blue) */
 }
 
 .custom-instagram-icon {
-  color: #e1306c; /* Set the custom color for Instagram (e.g., Instagram pink) */
+  color: #e1306c;
+  /* Set the custom color for Instagram (e.g., Instagram pink) */
 }
 
 body {
   background-color: #7574732d;
 }
+
 .center-nav {
   display: flex;
   justify-content: center;
@@ -126,7 +146,7 @@ body {
   font-size: 22px;
 }
 
-.no-gutter{
+.no-gutter {
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
@@ -139,14 +159,18 @@ body {
   position: fixed;
 
   width: 100%;
-  height: 100vh; /* Set the height to cover the viewport height */
-  z-index: -1; /* Place it behind the main content */
+  height: 100vh;
+  /* Set the height to cover the viewport height */
+  z-index: -1;
+  /* Place it behind the main content */
   background-image: url("./img/bg.jpeg");
   background-size: cover;
   background-position: center;
   /* Ensures the background stays fixed when scrolling */
-  opacity: 1; /* Set opacity to full */
-  filter: brightness(0.5); /* Adjust brightness (0.7 reduces it) */
+  opacity: 1;
+  /* Set opacity to full */
+  filter: brightness(0.5);
+  /* Adjust brightness (0.7 reduces it) */
   color: white;
 }
 
@@ -176,10 +200,12 @@ body {
   left: 0;
   width: 100%;
   /* Set the height to cover the viewport height */
-  z-index: -1; /* Place it behind the main content */
+  z-index: -1;
+  /* Place it behind the main content */
 
   /* Set opacity to full */
-  filter: brightness(0.7); /* Adjust brightness (0.7 reduces it) */
+  filter: brightness(0.7);
+  /* Adjust brightness (0.7 reduces it) */
 }
 
 /* Styles for the introductory text */
@@ -192,6 +218,7 @@ body {
 .about-us-section {
   width: 100%;
 }
+
 .about-us-section .row1 {
   display: flex;
   flex-direction: row;
@@ -217,8 +244,10 @@ body {
 .owner-card img {
   width: 70%;
   top: 0;
-  object-fit: cover; /* You can choose 'cover', 'contain', 'fill', etc. based on your needs */
-  aspect-ratio: 6/5; /* Set your desired aspect ratio */
+  object-fit: cover;
+  /* You can choose 'cover', 'contain', 'fill', etc. based on your needs */
+  aspect-ratio: 6/5;
+  /* Set your desired aspect ratio */
 }
 
 .owner-card p {
@@ -289,6 +318,7 @@ body {
   0% {
     transform: translateX(100%);
   }
+
   100% {
     transform: translateX(-100%);
   }
@@ -303,6 +333,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .footer-button {
   width: 180px;
 }
@@ -316,37 +347,47 @@ body {
 .footer .message {
   width: 100%;
 }
+
 /* Adjustments for Mobile View */
 @media (min-width: 992px) and (max-width: 1140px) {
+
   /* Styles for screens with a width between 768px and 1140px */
-  .dark-navbar{
-    font-size:16px ;
+  .dark-navbar {
+    font-size: 16px;
   }
 }
-@media  (max-width: 992px) {
+
+@media (max-width: 992px) {
+
   /* Styles for screens with a width between 768px and 1140px */
-  .dark-navbar{
+  .dark-navbar {
     padding-right: 30px;
   }
 }
 
 /* Adjustments for Mobile View */
 @media (max-width: 768px) {
- 
+
   .home-text {
-    font-size: 16px; /* Adjust the font size for smaller screens */
-    margin: 0 10px; /* Add a little margin on the sides */
+    font-size: 16px;
+    /* Adjust the font size for smaller screens */
+    margin: 0 10px;
+    /* Add a little margin on the sides */
   }
+
   .about-us-section .row1 {
-    flex-direction: column; /* Change to a column layout on mobile */
+    flex-direction: column;
+    /* Change to a column layout on mobile */
   }
 
   .about-us-section .row1 .col1 {
-    width: 100%; /* Make each column take up the full width on mobile */
+    width: 100%;
+    /* Make each column take up the full width on mobile */
   }
 
   .about-us-section .row1 div .about-image-2 {
-    width: 70%; /* Adjust the width of the image on mobile */
+    width: 70%;
+    /* Adjust the width of the image on mobile */
   }
 
   .about-text {
@@ -354,11 +395,13 @@ body {
   }
 
   .about-us-section .row1 .imga {
-    order: 2; /* Set the order of the image to 2 on mobile */
+    order: 2;
+    /* Set the order of the image to 2 on mobile */
   }
 
   .about-us-section .row1 .txt {
-    order: 1; /* Set the order of the text to 1 on mobile */
+    order: 1;
+    /* Set the order of the text to 1 on mobile */
   }
 
   .centered-image-container img {
@@ -368,4 +411,13 @@ body {
   .centered-content h2 {
     font-size: 40px;
   }
+}
+
+@media (max-width: 475px) {
+
+  .tagline h2 {
+    font-size: 30px !important;
+
+  }
+
 }
