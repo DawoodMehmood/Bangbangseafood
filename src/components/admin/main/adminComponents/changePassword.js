@@ -95,7 +95,12 @@ const ChangePassword = () => {
           />
         </div>
 
-        <button type="button" onClick={handleUpdate} disabled={isLoading}>
+        <button
+          type="button"
+          onClick={handleUpdate}
+          disabled={isLoading}
+          style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
+        >
           Change Password
         </button>
       </form>

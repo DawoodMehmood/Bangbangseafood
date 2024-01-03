@@ -169,7 +169,11 @@ const Menu = () => {
               <img src={image} alt="Uploaded img" className="uploadedImage" />
             </div>
           )}
-          <button type="submit" disabled={isLoading}>
+          <button
+            type="submit"
+            disabled={isLoading}
+            style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
+          >
             Upload Image
           </button>
         </form>

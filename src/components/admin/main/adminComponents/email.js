@@ -114,7 +114,12 @@ const EmailKey = () => {
           />
         </div>
 
-        <button type="button" onClick={handleUpdate} disabled={isLoading}>
+        <button
+          type="button"
+          onClick={handleUpdate}
+          disabled={isLoading}
+          style={{ cursor: isLoading ? "not-allowed" : "pointer" }}
+        >
           Update
         </button>
       </form>
