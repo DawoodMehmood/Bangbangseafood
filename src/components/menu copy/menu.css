@@ -132,6 +132,17 @@ h2 {
   padding-left: 0;
   margin-top: 2px;
 }
+/* loader.css */
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  height: 30vh;
+}
+
+/* Adjust the loader styles as needed */
 
 /* Adjustments for Mobile View */
 /* Existing styles... */
