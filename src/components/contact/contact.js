@@ -78,7 +78,7 @@ const Contact = () => {
   };
 
   return (
-    <div>
+    <div className="contact-main-div">
       <div className="contact-image">
         <img src={backgroundImage} alt="header img" loading="lazy" />
         <h1 className="fs-1 centered-heading">CONTACT US</h1>
@@ -90,9 +90,9 @@ const Contact = () => {
         </div>
       </Container>
 
-      <Container>
-        <Row className="contact-address mx-5">
-          <Col sm={5} className="border-end border-3 pe-5">
+      
+        <Row className="no-gutter contact-address  ">
+          <Col sm={6} className="border-end border-3 pe-5 mt-4">
             <div className="address-details row ms-3">
               <div className="col-md-4">
                 <p className="fs-5">
@@ -119,17 +119,17 @@ const Contact = () => {
                   <strong>Email: </strong>
                 </p>
               </div>
-              <div className="col-md-4">
+              <div className="col-md-7">
                 <p className="fs-5 ">{contactInfo.email}</p>
               </div>
             </div>
           </Col>
-          <Col sm={7}>
+          <Col sm={6}>
             <Form
               className="contact-us-form fw-bold ms-3"
               onSubmit={handleSubmit}
             >
-              <Row className="message">
+              <Row className="no-gutter message">
                 <Col sm={6}>
                   <Form.Group>
                     <Form.Label>Name</Form.Label>
@@ -157,7 +157,7 @@ const Contact = () => {
                   </Form.Group>
                 </Col>
               </Row>
-              <Row className="message">
+              <Row className="no-gutter message">
                 <Form.Group className="mt-3">
                   <Form.Label>Message</Form.Label>
                   <Form.Control
@@ -171,14 +171,17 @@ const Contact = () => {
                   />
                 </Form.Group>
               </Row>
-              <Row className="recaptche mt-4">
+              <div className="recaptche mt-4">
+               
                 <ReCAPTCHA
                   sitekey="6LfGqCQpAAAAABYzDxejJ-x-IDRurZDVC16P-o-L"
                   onChange={(e) => setCapval(e)}
                   className="contact-recaptche"
                 />
-              </Row>
-              <Row className=" message" D>
+               
+                
+              </div>
+              <Row className="no-gutter  message" D>
                 <div className="send-button-contact">
                   <Button
                     className="fs-6 mt-3 py-2 px-3"
@@ -193,7 +196,7 @@ const Contact = () => {
             </Form>
           </Col>
         </Row>
-      </Container>
+     
 
       <div className="container">
         <div className="row-sm maps m-5">

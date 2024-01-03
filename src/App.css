@@ -126,6 +126,11 @@ body {
   font-size: 22px;
 }
 
+.no-gutter{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
   .home-text {
