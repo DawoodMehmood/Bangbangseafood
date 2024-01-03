@@ -131,13 +131,7 @@ body {
   margin-right: 0px !important;
 }
 
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-  .home-text {
-    font-size: 16px; /* Adjust the font size for smaller screens */
-    margin: 0 10px; /* Add a little margin on the sides */
-  }
-}
+
 
 /* Apply the background image to a pseudo-element */
 .home-with-background::before {
@@ -239,40 +233,6 @@ body {
 
 /* Existing styles... */
 
-/* Adjustments for Mobile View */
-@media (max-width: 768px) {
-  .about-us-section .row1 {
-    flex-direction: column; /* Change to a column layout on mobile */
-  }
-
-  .about-us-section .row1 .col1 {
-    width: 100%; /* Make each column take up the full width on mobile */
-  }
-
-  .about-us-section .row1 div .about-image-2 {
-    width: 70%; /* Adjust the width of the image on mobile */
-  }
-
-  .about-text {
-    font-size: 20px;
-  }
-
-  .about-us-section .row1 .imga {
-    order: 2; /* Set the order of the image to 2 on mobile */
-  }
-
-  .about-us-section .row1 .txt {
-    order: 1; /* Set the order of the text to 1 on mobile */
-  }
-
-  .centered-image-container img {
-    width: 60%;
-  }
-
-  .centered-content h2 {
-    font-size: 40px;
-  }
-}
 
 .about-container {
   background-color: #222222;
@@ -355,4 +315,57 @@ body {
 
 .footer .message {
   width: 100%;
+}
+/* Adjustments for Mobile View */
+@media (min-width: 992px) and (max-width: 1140px) {
+  /* Styles for screens with a width between 768px and 1140px */
+  .dark-navbar{
+    font-size:16px ;
+  }
+}
+@media  (max-width: 992px) {
+  /* Styles for screens with a width between 768px and 1140px */
+  .dark-navbar{
+    padding-right: 30px;
+  }
+}
+
+/* Adjustments for Mobile View */
+@media (max-width: 768px) {
+ 
+  .home-text {
+    font-size: 16px; /* Adjust the font size for smaller screens */
+    margin: 0 10px; /* Add a little margin on the sides */
+  }
+  .about-us-section .row1 {
+    flex-direction: column; /* Change to a column layout on mobile */
+  }
+
+  .about-us-section .row1 .col1 {
+    width: 100%; /* Make each column take up the full width on mobile */
+  }
+
+  .about-us-section .row1 div .about-image-2 {
+    width: 70%; /* Adjust the width of the image on mobile */
+  }
+
+  .about-text {
+    font-size: 20px;
+  }
+
+  .about-us-section .row1 .imga {
+    order: 2; /* Set the order of the image to 2 on mobile */
+  }
+
+  .about-us-section .row1 .txt {
+    order: 1; /* Set the order of the text to 1 on mobile */
+  }
+
+  .centered-image-container img {
+    width: 60%;
+  }
+
+  .centered-content h2 {
+    font-size: 40px;
+  }
 }

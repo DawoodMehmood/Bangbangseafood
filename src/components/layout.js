@@ -24,7 +24,7 @@ const Layout = ({ bannerText }) => {
         </Container>
       </div>
 
-      <Navbar expand="lg" className={` px-5 dark-navbar`} variant="dark">
+      <Navbar expand="lg" className={` ps-5 dark-navbar`} variant="dark">
         <Navbar.Brand as={Link} to="/">
           <img
             src={brandImage}
