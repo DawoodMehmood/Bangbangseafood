@@ -30,8 +30,17 @@
   justify-content: flex-end;
 }
 
-.address {
+.box .address {
   text-wrap: balance;
+}
+
+@media (max-width: 475px) {
+
+  .box .address {
+    font-size: 18px !important;
+
+  }
+
 }
 
 .form-container {
@@ -50,6 +59,7 @@
   .form-container {
     width: 90vw;
   }
+
   .catering-recaptcha {
     scale: 0.8;
   }
