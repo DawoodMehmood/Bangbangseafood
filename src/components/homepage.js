@@ -51,15 +51,16 @@ const Home = () => {
           <strong>{contactInfo.address}</strong>
         </div>
 
-        {contactInfo.timings.map((dayAndTime, index) => (
-          <div key={index} className="home-text my-3">
-            <strong>
-              {dayAndTime.days}
-              <br />
-              {dayAndTime.time}
-            </strong>
-          </div>
-        ))}
+        {contactInfo.timings &&
+          contactInfo.timings.map((dayAndTime, index) => (
+            <div key={index} className="home-text my-3">
+              <strong>
+                {dayAndTime.days}
+                <br />
+                {dayAndTime.time}
+              </strong>
+            </div>
+          ))}
       </div>
       <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
