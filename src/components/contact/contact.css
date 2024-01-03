@@ -12,9 +12,11 @@
   width: 100%;
   height: auto;
   position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  transform: translate(0,-20%);
   filter: brightness(0.6);
 
 }
@@ -24,7 +26,7 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .send-button-contact {
@@ -83,6 +85,11 @@ width: 100%;
 }
 }
 
+@media (max-width:575px) {
+  .centered-heading{
+    top:50%
+  }
+}
 .maps{
   width: 100%;
 }

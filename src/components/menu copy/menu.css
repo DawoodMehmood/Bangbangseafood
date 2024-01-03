@@ -57,31 +57,7 @@ h2 {
   margin-bottom: 0.25rem;
 }
 
-.centered-heading {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-.contact-image {
-  text-align: center;
-  position: relative;
-  height: 300px;
-  overflow: hidden;
-}
-
-.contact-image img {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -40%);
-  filter: brightness(0.6);
-}
-
+  
 .category-description {
   font-size: 20px;
 }
