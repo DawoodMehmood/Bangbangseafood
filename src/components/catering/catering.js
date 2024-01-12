@@ -246,14 +246,14 @@ const Catering = () => {
 
       <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
-          Bang Bang Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;
+          Bang Bang Seafood & Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
     </div>

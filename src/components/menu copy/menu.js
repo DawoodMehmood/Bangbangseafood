@@ -34,8 +34,6 @@ const MenuCopy = () => {
       });
   }, []);
 
-  
-
   return (
     <div className="menu-main">
       <div className="contact-image">
@@ -70,9 +68,15 @@ const MenuCopy = () => {
           ))}
         </Row>
       </Container>)} */}
-       {loading ? (
+      {loading ? (
         <div className="loader-container">
-          <ClipLoader css={override} size={100} color={"#ffffff"} loading={loading} className="clip-loader" />
+          <ClipLoader
+            css={override}
+            size={100}
+            color={"#ffffff"}
+            loading={loading}
+            className="clip-loader"
+          />
         </div>
       ) : (
         <Container className="container-fluid" fluid>
@@ -104,14 +108,14 @@ const MenuCopy = () => {
       )}
       <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
-          Bang Bang Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;
+          Bang Bang Seafood & Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
     </div>
