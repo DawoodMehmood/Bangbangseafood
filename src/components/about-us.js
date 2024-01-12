@@ -15,9 +15,9 @@ const AboutUs = () => {
         <img src={image} alt="logo" loading="lazy" />
       </div>
 
-      <div className="centered-content tagline">
+      {/* <div className="centered-content tagline">
         <h2>Flavor That Goes Bang Bang!</h2>
-      </div>
+      </div> */}
 
       <div className="about-us-section mb-5">
         <div className="row1">
@@ -82,14 +82,14 @@ const AboutUs = () => {
 
       <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
-          Bang Bang Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;
+          Bang Bang Seafood & Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
     </div>

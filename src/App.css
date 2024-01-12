@@ -146,12 +146,14 @@ body {
   font-size: 22px;
 }
 
+.timings {
+  white-space: nowrap;
+}
+
 .no-gutter {
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
-
-
 
 /* Apply the background image to a pseudo-element */
 .home-with-background::before {
@@ -170,6 +172,8 @@ body {
   opacity: 1;
   /* Set opacity to full */
   filter: brightness(0.5);
+  backdrop-filter: blur(50px);
+
   /* Adjust brightness (0.7 reduces it) */
   color: white;
 }
@@ -213,6 +217,7 @@ body {
   padding: 30px;
   font-size: 1.2em;
   color: #dadada;
+  text-align: justify;
 }
 
 .about-us-section {
@@ -261,7 +266,6 @@ body {
 /* Existing styles... */
 
 /* Existing styles... */
-
 
 .about-container {
   background-color: #222222;
@@ -350,7 +354,6 @@ body {
 
 /* Adjustments for Mobile View */
 @media (min-width: 992px) and (max-width: 1140px) {
-
   /* Styles for screens with a width between 768px and 1140px */
   .dark-navbar {
     font-size: 16px;
@@ -358,7 +361,6 @@ body {
 }
 
 @media (max-width: 992px) {
-
   /* Styles for screens with a width between 768px and 1140px */
   .dark-navbar {
     padding-right: 30px;
@@ -367,12 +369,12 @@ body {
 
 /* Adjustments for Mobile View */
 @media (max-width: 768px) {
-
   .home-text {
     font-size: 16px;
     /* Adjust the font size for smaller screens */
     margin: 0 10px;
     /* Add a little margin on the sides */
+    text-wrap: balance;
   }
 
   .about-us-section .row1 {
@@ -392,6 +394,7 @@ body {
 
   .about-text {
     font-size: 20px;
+    
   }
 
   .about-us-section .row1 .imga {
@@ -414,10 +417,11 @@ body {
 }
 
 @media (max-width: 475px) {
-
   .tagline h2 {
     font-size: 30px !important;
-
   }
-
+  .about-text {
+    line-height: 1.2;
+    font-size: 16px;
+  }
 }
