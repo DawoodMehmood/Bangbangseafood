@@ -53,7 +53,7 @@ const Home = () => {
 
         {contactInfo.timings &&
           contactInfo.timings.map((dayAndTime, index) => (
-            <div key={index} className="home-text my-3">
+            <div key={index} className="home-text timings my-3">
               <strong>
                 {dayAndTime.days}
                 <br />
@@ -64,14 +64,14 @@ const Home = () => {
       </div>
       <div className="marquee-container">
         <div className="marquee-text" id="scrolling-text">
-          Bang Bang Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang
-          Seafood&nbsp;&nbsp;&nbsp;&nbsp;
+          Bang Bang Seafood & Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;Bang Bang Seafood &
+          Grill&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </div>
     </>
