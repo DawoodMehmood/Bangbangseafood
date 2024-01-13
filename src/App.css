@@ -214,7 +214,7 @@ body {
 
 /* Styles for the introductory text */
 .about-text {
-  padding: 30px;
+  padding: 10px 30px 10px 30px;
   font-size: 1.2em;
   color: #dadada;
   text-align: justify;
@@ -250,9 +250,8 @@ body {
   width: 70%;
   top: 0;
   object-fit: cover;
-  /* You can choose 'cover', 'contain', 'fill', etc. based on your needs */
   aspect-ratio: 6/5;
-  /* Set your desired aspect ratio */
+  box-shadow: 5px 5px 10px 0 #00000070;
 }
 
 .owner-card p {
@@ -260,12 +259,19 @@ body {
   font-weight: 500;
 }
 
-/* Existing styles... */
+.restaurant-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-/* Adjustments for Mobile View */
-/* Existing styles... */
-
-/* Existing styles... */
+.restaurant-card img {
+  width: 80%;
+  top: 0;
+  object-fit: cover;
+  aspect-ratio: 6/5;
+  box-shadow: 5px 5px 10px 0 #00000070;
+}
 
 .about-container {
   background-color: #222222;
@@ -352,8 +358,15 @@ body {
   width: 100%;
 }
 
+@media (min-width: 992px) {
+  .about-us-section {
+    padding: 0 30px 0 30px;
+  }
+}
+
 /* Adjustments for Mobile View */
 @media (min-width: 992px) and (max-width: 1140px) {
+
   /* Styles for screens with a width between 768px and 1140px */
   .dark-navbar {
     font-size: 16px;
@@ -361,6 +374,7 @@ body {
 }
 
 @media (max-width: 992px) {
+
   /* Styles for screens with a width between 768px and 1140px */
   .dark-navbar {
     padding-right: 30px;
@@ -387,14 +401,8 @@ body {
     /* Make each column take up the full width on mobile */
   }
 
-  .about-us-section .row1 div .about-image-2 {
-    width: 70%;
-    /* Adjust the width of the image on mobile */
-  }
-
   .about-text {
     font-size: 20px;
-    
   }
 
   .about-us-section .row1 .imga {
@@ -420,6 +428,7 @@ body {
   .tagline h2 {
     font-size: 30px !important;
   }
+
   .about-text {
     line-height: 1.2;
     font-size: 16px;
