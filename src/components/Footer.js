@@ -73,13 +73,13 @@ const Footer = ({ contactInfo, bannerText }) => {
               </a>
             </Col>
             {/* Second Column */}
-            <Col md={3}  sm={6} className="text-center mb-3 mt-2">
+            <Col md={3} sm={6} className="text-center mb-3 mt-2">
               <h4>Address</h4>
               <p className="mt-5">{contactInfo.address}</p>
             </Col>
 
             {/* Third Column */}
-            <Col md={3}  sm={6} className="text-center mb-3 mt-2">
+            <Col md={3} sm={6} className="text-center mb-3 mt-2">
               <h4>Contact Us</h4>
               <p className="mt-5">
                 Phone: {contactInfo.number}
@@ -125,7 +125,8 @@ const Footer = ({ contactInfo, bannerText }) => {
         <Container>
           <Row>
             <Col>
-              Copyright © 2023 - Bang Bang Seafood & Grill - All Rights Reserved
+              Copyright &copy; 2023 - Bang Bang Seafood & Grill - All Rights
+              Reserved
             </Col>
           </Row>
         </Container>
