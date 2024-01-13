@@ -2,6 +2,7 @@ import React from "react";
 import image from "./../img/logo.png";
 import backgroundImage from "./../img/background-image.jpg";
 import chef from "./../img/chef.jpeg";
+import restaurant from "./../img/restaurant.jpeg";
 
 const AboutUs = () => {
   return (
@@ -15,15 +16,14 @@ const AboutUs = () => {
         <img src={image} alt="logo" loading="lazy" />
       </div>
 
-      {/* <div className="centered-content tagline">
-        <h2>Flavor That Goes Bang Bang!</h2>
-      </div> */}
-
       <div className="about-us-section mb-5">
         <div className="row1">
           <div className="about-text col1">
             <p>
-              Welcome to Bang Bang Seafood & Grill ! <br />
+              <div className="text-center">
+                Welcome to <strong>Bang Bang Seafood & Grill</strong>!
+              </div>
+              <br />
               At Bang Bang Seafood & Grill, we infuse passion, expertise, and a
               love for exceptional cuisine into every dish we create. Founded by
               a registered nurse turned culinary enthusiast, our journey began
@@ -39,19 +39,21 @@ const AboutUs = () => {
             </p>
           </div>
           <div className="owner-card col1">
-            <img src={chef} alt="side img 1" loading="lazy" />
-
+            <img src={chef} alt="chef img" loading="lazy" />
             <p className="text-light">Chef A.Abid</p>
           </div>
         </div>
         <div className="row1">
-          <div className="col1 text-center imga">
+          {/* <div className="col1 text-center imga">
             <img
               className="about-image-2"
               src="https://as1.ftcdn.net/v2/jpg/00/78/29/06/1000_F_78290623_jxPQwZoKVz8Y7hCtCp8PfjlWfLmfptpP.jpg"
               alt="side img 2"
               loading="lazy"
             />
+          </div> */}
+          <div className="restaurant-card col1 imga">
+            <img src={restaurant} alt="restaurant img" loading="lazy" />
           </div>
 
           <div className="about-text col1 txt">
@@ -74,7 +76,7 @@ const AboutUs = () => {
               <br></br>
               Sincerely,
               <br />
-              Chef A.Abid
+              <strong>Chef A.Abid</strong>
             </p>
           </div>
         </div>
