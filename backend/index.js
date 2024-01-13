@@ -17,8 +17,16 @@ const PORT = process.env.PORT || 8000;
 
 const app = express();
 
+const allowedOrigins = ["https://bangbangseafood.com", "http://localhost:3000"];
+
 // CORS to allow requests
-app.use(cors());
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true, // Enable credentials (cookies, authorization headers, etc.)
+  })
+);
 
 // Parse application/json requests
 app.use(bodyParser.json({ limit: "50mb" }));
