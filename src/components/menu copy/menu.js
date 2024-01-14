@@ -83,7 +83,7 @@ const MenuCopy = () => {
           <Row className="no-gutters mobile-row mx-5">
             {menuImg.map((menu, index) => (
               <React.Fragment key={index}>
-                <Col sm={12}>
+                <Col sm={9} className="mx-auto">
                   <div className="menuimage">
                     {menu && (
                       <img
@@ -96,7 +96,7 @@ const MenuCopy = () => {
                   </div>
                 </Col>
 
-                <Col sm={12}>
+                <Col sm={9} className="mx-auto">
                   <div className="menuimage">
                     <div className="divider"></div>
                   </div>
