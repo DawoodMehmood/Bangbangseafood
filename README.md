@@ -24,6 +24,19 @@ cd backend
 npm install
 ```
 
+### Configuration
+
+Create a `.env` file in the root directory of the project and add the following:
+
+```bash
+MONGODB_URI=<your_mongodb_uri>
+JWT_SECRET=<your_jwt_secret>
+PORT=5000
+ALLOW_ADMIN_SETUP=false
+```
+
+Replace `<your_mongodb_uri>` with your MongoDB connection string and `<your_jwt_secret>` with a random string. Change `ALLOW_ADMIN_SETUP` to `true` for creating new admins.
+
 ### Running
 
 To start the application in development mode (with file watching) run these commands in two separate terminal sessions:
