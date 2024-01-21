@@ -54,7 +54,7 @@ const Home = () => {
         {contactInfo.timings &&
           contactInfo.timings.map((dayAndTime, index) => (
             <div key={index} className="home-text timings my-3">
-              <strong>
+              <strong className="timings">
                 {dayAndTime.days}
                 <br />
                 {dayAndTime.time}
