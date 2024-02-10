@@ -1,6 +1,7 @@
 # MERN based Restaurant Website
 
 Website is available at [BangBangSeaFood](https://bangbangseafood.com/home).
+Deployed the website on GoDaddy using this [VPS server deployment guide](https://thapatechnical.shop/blogs/host-a-mern-stack-app-on-a-vps).
 
 ## Getting Started
 
